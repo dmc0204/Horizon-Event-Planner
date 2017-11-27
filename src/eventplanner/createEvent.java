@@ -163,7 +163,7 @@ public class createEvent extends javax.swing.JFrame {
         String createEventSQL = "INSERT into horizonevent(eName, eLocation, eDatetime, eSize) VALUES (\"" + eNameIn + "\",\"" + eLocationIn + "\",\"" + eDatetimeIn + "\",\"" + sValue + "\")";
 
         try {
-            dbWork.dbWorkAdd("root", "harsh19", createEventSQL);
+            dbWork.dbWorkAdd(dbWork.getLogin(), dbWork.getPassword(), createEventSQL);
             System.out.println("Event succesfully added."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
             createEventClose(); //closing Create Event Window. -DC
             eventMenu eventMenuGUI = new eventMenu(); //Opening Event Menu. -DC

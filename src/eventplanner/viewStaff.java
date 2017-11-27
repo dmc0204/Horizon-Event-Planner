@@ -63,6 +63,7 @@ public class viewStaff extends javax.swing.JFrame {
         viewStaffBackButton = new javax.swing.JButton();
         populateStaffButton = new javax.swing.JButton();
         viewStaffDeleteButton = new javax.swing.JButton();
+        viewStaffAddButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,6 +96,14 @@ public class viewStaff extends javax.swing.JFrame {
             }
         });
 
+        viewStaffAddButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewStaffAddButton.setText("Add");
+        viewStaffAddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewStaffAddButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,7 +123,9 @@ public class viewStaff extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(viewStaffDeleteButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(viewStaffDeleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewStaffAddButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(52, 52, 52))
         );
         layout.setVerticalGroup(
@@ -133,6 +144,8 @@ public class viewStaff extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(viewStaffAddButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(viewStaffDeleteButton)
                         .addGap(81, 81, 81))))
         );
@@ -203,6 +216,15 @@ public class viewStaff extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_viewStaffDeleteButtonActionPerformed
 
+    private void viewStaffAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStaffAddButtonActionPerformed
+
+        viewStaffClose(); //closing current window and opening the add staff window. -DC
+        addStaff addStaffUI = new addStaff();
+        addStaffUI.addStaffOpen();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewStaffAddButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -241,6 +263,7 @@ public class viewStaff extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton populateStaffButton;
+    private javax.swing.JButton viewStaffAddButton;
     private javax.swing.JButton viewStaffBackButton;
     private javax.swing.JButton viewStaffDeleteButton;
     private javax.swing.JList<String> viewStaffJlist;
