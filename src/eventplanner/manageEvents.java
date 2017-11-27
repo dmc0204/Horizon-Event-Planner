@@ -139,7 +139,13 @@ public class manageEvents extends javax.swing.JFrame {
         
     }else if(eventChild <= 2){
         //Use Case 6 and Use Case 7: AddJob:RemoveJob -DC
+        
+        manageEventsClose(); //closing the manage UI and opening the appropriate child UI. -DC
+        viewJobs viewJobsUI = new viewJobs();
+        viewJobsUI.viewJobsOpen();        
         System.out.println("View Jobs");
+        
+        
     }else if(eventChild <= 3) {
         //Use Case 8 and Use Case 9: AddSponsor:RemoveSponsor -DC
         System.out.println("View Sponsors");

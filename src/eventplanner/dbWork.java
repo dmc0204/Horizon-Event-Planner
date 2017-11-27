@@ -243,7 +243,7 @@ public class dbWork {
         if (testConnection = true) {
 
             Statement deleteEventSQL = dbConnection.createStatement(); //object to deliver the SQL query or statement. -DC
-            String deleteStaff = "Delete from staff where sID = " + sID;//the SQL statement that uses the passed eID value as the key to deleting the record the user wants to delete. -DC
+            String deleteStaff = "Delete from staff where sID = " + sID + "";//the SQL statement that uses the passed eID value as the key to deleting the record the user wants to delete. -DC
             System.out.println(deleteStaff);
 
             int rowsAffected = deleteEventSQL.executeUpdate(deleteStaff); //passing the number of rows affected by the SQL statement that was passed to the executeUpdate method. -DC
@@ -275,6 +275,54 @@ public class dbWork {
             dbConnection.close();
         }
 
+    }
+    
+    public static DefaultListModel<Object> dbWorkSelectJobs(String dbLogin, String dbPassword, String dbSelect) throws ClassNotFoundException, SQLException {//add method for database insert queries. -DC
+
+        {
+
+            Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
+            String dbLocation = "jdbc:mysql://localhost:3306/horizon"; //setting up the dbLocation. -DC
+            Connection dbConnection = DriverManager.getConnection(dbLocation, dbLogin, dbPassword); //creating a connection to the database. -DC
+
+            Boolean testConnection = dbConnection.isValid(10); //testing the connection. -DC
+
+            DefaultListModel resultsReturnList = new DefaultListModel();
+
+            if (testConnection = true) {
+                System.out.println("Connected to Database."); //stub to tell me if the connection failed or the query. -DC
+            }
+
+            if (testConnection = true) {
+                System.out.println(dbSelect); //stub to test SQL query input being passed to the database. -DC
+                Statement createStaffSQL = dbConnection.createStatement(); //Not positive what is going on here. I am adding an object to another object? -DC
+                ResultSet staffList = createStaffSQL.executeQuery(dbSelect);
+
+                dbWork.clearEID(); //resetting the elements in the event ID list. -DC
+
+                while (staffList.next()) { //My stub to see what is in the resultset, and populate the listmodel. -DC
+
+                    /* Stubs
+                int eNameLength = eventList.getString("eName").length();//counting the length of the Event Name. -DC
+                int eLocationLength = eventList.getString("eLocation").length();//count the length of the Event Location. -DC
+                int eDatetimeLength = eventList.getString ("eDatetime").length();//count the length of the Events Datetime. -DC
+                System.out.println(eNameLength + "     " + eLocationLength + "     " + eDatetimeLength);// printing out length data. -DC
+                System.out.println(eventList.getInt("eID") + "    |    " + eventList.getString("eName"));  //testing option B output. eID and eName only. -DC
+                     */
+                    
+                    dbWork.setSID(staffList.getInt("sID")); //my staff ID array so i know which id is referenced by which index in the list box. -DC
+
+                    resultsReturnList.addElement(staffList.getString("sFname") + "        " + staffList.getString("sLname") + "        " + staffList.getString("sPhone") + "        " + staffList.getString("sDatetime") + "        " + staffList.getString("sStatus")); //adding the elements of interest for the viewEvent UI. -DC
+                }
+                dbConnection.close();//closing the connection. -DC
+                return resultsReturnList;      //returning the contructed results list from the resultset. -DC
+
+            }
+
+            System.out.println("No Events Added.");
+
+            return null;
+        }
     }
 
     public static DefaultListModel<Object> dbWorkSelectStaff(String dbLogin, String dbPassword, String dbSelect) throws ClassNotFoundException, SQLException {//add method for database insert queries. -DC
@@ -484,5 +532,38 @@ public class dbWork {
         System.out.println("Staff added.");
 
     }
+    
+    public static void jobsPopulator() throws ClassNotFoundException, SQLException {
+
+        Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
+        String dbLocation = "jdbc:mysql://localhost:3306/horizon"; //setting up the dbLocation. -DC
+        Connection dbConnection = DriverManager.getConnection(dbLocation, dbWork.getLogin(), dbWork.getPassword()); //creating a connection to the database. -DC
+
+        Boolean testConnection = dbConnection.isValid(10);
+
+        if (testConnection = true) {
+            System.out.println("Connected to Database."); //stub to tell me if the connection failed or the query. -DC
+        }
+
+        if (testConnection = true) {
+
+            Statement createEventSQL = dbConnection.createStatement(); //Not positive what is going on here. I am adding an object to another object? -DC
+
+            int i = 0; //this is hopfully going to populate the database with many entries. -DC
+            for (i = 0; i < 11; i++) {
+
+                String dbInsert = "Insert into jobs(jTitle, jDatetime, eID) values (" + i + "," + i + dbWork.geteid() + ")";
+
+                createEventSQL.executeUpdate(dbInsert);
+            }
+
+            dbConnection.close(); //closing connection to the database. -DC
+
+        }
+
+        System.out.println("Jobs added.");
+
+    }
+    
 
 }
