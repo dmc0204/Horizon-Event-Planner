@@ -23,29 +23,174 @@ public class dbWork {
     public dbWork() {
 
     }
-    
-    
-    /*    
-    All CAPS = Array, All lowercase = int. 
+
+    /*
+    All CAPS = Array, All lowercase = int.
     geteid() = int;
-    getEID(i) = array; 
-    
+    getEID(i) = array;
+
+    getsid() = int;
+    getSID() = array;
+
+    getjid() = int;
+    getJID() = array;
+
+    getvid() = int;
+    getVID() = array;
+
+    getspid() = int;
+    getSPID() = array;
+
     -DC
-    
-    */
-    static ArrayList<Integer> eventID = new ArrayList(); //Integer array of unknown size. -DC
-    static int eID = -1; //piece of the array. -DC
-    
-    public static int geteid(){ //getting the distinct event ID to be used in the management of event dependencies. -DC
-        
-        return eID;
-        
+
+     */
+    static ArrayList<Integer> eventID = new ArrayList(); //Integer array of unknown size for the event primary key. -DC
+    static int eID = -1; //piece of the array, or a specific event ID. -DC
+
+    static ArrayList<Integer> staffID = new ArrayList(); //array for staffID. -DC
+    static int sID = -1;//a specific staffID. -DC
+
+    static ArrayList<Integer> jobID = new ArrayList(); //array for jobID. -DC
+    static int jID = -1;//a specific jobID. -DC
+
+    static ArrayList<Integer> sponsorID = new ArrayList(); //array for sponsorID. -DC
+    static int spID = -1;//a specific sponsorID. -DC
+
+    static ArrayList<Integer> vendorID = new ArrayList(); //array for vendorID. -DC
+    static int vID = -1;//a specific vendorID. -DC
+
+    private static String dbLogin; //private variables to store the login and password. -DC
+    private static String dbPassword;
+
+    public static void setLogin(String x) { //methods for setting and getting the login and password. -DC
+
+        dbLogin = x;
+
     }
-    
-    public static void seteid(int e){ //setting the distinct event ID to be used in the mananagement of event dependencies. -DC
-        
+
+    public static void setPassword(String y) {//setting password. -DC
+
+        dbPassword = y;
+
+    }
+
+    public static String getLogin() { //getting login. -DC
+
+        return dbLogin;
+    }
+
+    public static String getPassword() { //getting password. -DC
+
+        return dbPassword;
+
+    }
+
+    public static int getsid() {//getting the staff id for the table references. -DC
+
+        return sID;
+
+    }
+
+    public void setsid(int s) { //setting the staff id. -DC
+
+        sID = s;
+
+    }
+
+    public static int getSID(int listIndex) {//getting an id from the array at a specific index. -DC
+
+        return staffID.get(listIndex);
+
+    }
+
+    public static void setSID(int sID) { //building the array of staff IDs. -DC
+
+        staffID.add(sID);
+
+    }
+
+    public static int getjid() {//getting the job id for the table references. -DC
+
+        return jID;
+
+    }
+
+    public void setjid(int j) { //setting the job id. -DC
+
+        jID = j;
+
+    }
+
+    public static int getJID(int listIndex) {// getting an id from the array at a specific index. -DC
+
+        return jobID.get(listIndex);
+
+    }
+
+    public static void setJID(int jID) { //building the array of job IDs. -DC
+
+        jobID.add(jID);
+
+    }
+
+    public static int getvid() {// getting the vendor id for the table references. -DC
+
+        return vID;
+
+    }
+
+    public void setvid(int v) { // setting the vendor id. -DC
+
+        vID = v;
+
+    }
+
+    public static int getVID(int listIndex) {// getting an id from the array at a specific index. -DC
+
+        return vendorID.get(listIndex);
+
+    }
+
+    public static void setVID(int vID) { //building the array of vendor IDs. -DC
+
+        vendorID.add(vID);
+
+    }
+
+    public static int getspid() {// getting the sponsor id for the table references. -DC
+
+        return spID;
+
+    }
+
+    public void setspid(int sp) { // setting the sponsor id. -DC
+
+        spID = sp;
+
+    }
+
+    public static int getSPID(int listIndex) {// getting an id from the array at a specific index for sponsors. -DC
+
+        return sponsorID.get(listIndex);
+
+    }
+
+    public static void setSPID(int spID) { //building the array of sponsor IDs. -DC
+
+        sponsorID.add(spID);
+
+    }
+
+    public static int geteid() { //getting the distinct event ID to be used in the management of event dependencies. -DC
+
+        return eID;
+
+    }
+
+    public static void seteid(int e) { //setting the distinct event ID to be used in the mananagement of event dependencies. -DC
+
         eID = e;
-        
+
     }
 
     public static int getEID(int listIndex) { //get method to get the eventID. -DC
@@ -107,7 +252,7 @@ public class dbWork {
                 Statement createEventSQL = dbConnection.createStatement(); //Not positive what is going on here. I am adding an object to another object? -DC
                 ResultSet eventList = createEventSQL.executeQuery(dbSelect);
 
-                dbWork.clearEID(); //resetting the elements in the event ID list. -DC     
+                dbWork.clearEID(); //resetting the elements in the event ID list. -DC
 
                 while (eventList.next()) { //My stub to see what is in the resultset, and populate the listmodel. -DC
 
@@ -142,6 +287,10 @@ public class dbWork {
         Boolean testConnection = dbConnection.isValid(10);
 
         if (testConnection = true) { //Checking the database connection. -DC
+
+            dbWork.setLogin(dbLogin); //if it connected, storing the login information for use by other units. -DC
+            dbWork.setPassword(dbPassword);
+
             dbConnection.close();
             return true;
 
@@ -177,9 +326,9 @@ public class dbWork {
 
         return false;
     }
-    
-    public static void eventPopulator() throws ClassNotFoundException, SQLException{
-        
+
+    public static void eventPopulator() throws ClassNotFoundException, SQLException {
+
         Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
         String dbLocation = "jdbc:mysql://localhost:3306/horizon"; //setting up the dbLocation. -DC
         Connection dbConnection = DriverManager.getConnection(dbLocation, "root", "harsh19"); //creating a connection to the database. -DC
@@ -190,30 +339,24 @@ public class dbWork {
             System.out.println("Connected to Database."); //stub to tell me if the connection failed or the query. -DC
         }
 
-        if (testConnection = true) {        
-            
-            
-            
+        if (testConnection = true) {
+
             Statement createEventSQL = dbConnection.createStatement(); //Not positive what is going on here. I am adding an object to another object? -DC
-            
+
             int i = 0; //this is hopfully going to populate the database with many entries. -DC
-            for(i = 0; i < 1001; i++){
-                
+            for (i = 0; i < 1001; i++) {
+
                 String dbInsert = "Insert into horizonevent(eName, eLocation, eDatetime, eSize) values (" + i + "," + i + "," + i + "," + i + ")";
-                
+
                 createEventSQL.executeUpdate(dbInsert);
             }
-            
-            dbConnection.close(); //closing connection to the database. -DC
 
-           
+            dbConnection.close(); //closing connection to the database. -DC
 
         }
 
         System.out.println("Event failed to add.");
 
-        
-        
     }
 
 }
