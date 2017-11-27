@@ -24,7 +24,7 @@ public class viewEvents extends javax.swing.JFrame {
         try {
 
             //using defaultListModel to return the data of interest from the resultset. -DC
-            DefaultListModel eventsList = dbWork.dbWorkSelectEvent("root", "harsh19", "SELECT * FROM horizonevent");
+            DefaultListModel eventsList = dbWork.dbWorkSelectEvent(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM horizonevent");
 
             //populating the listbox with data in the defaultListModel. -DC
             viewEventsJlist.setModel(eventsList);
@@ -164,7 +164,7 @@ public class viewEvents extends javax.swing.JFrame {
        
 
         try { //Try Catch for the dbWorkDeleteEvent method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
-            dbWork.dbWorkDeleteEvent("root", "harsh19", dbWork.getEID(j));
+            dbWork.dbWorkDeleteEvent(dbWork.getLogin(), dbWork.getPassword(), dbWork.getEID(j));
            
         } catch (ClassNotFoundException e) {
             System.out.println("ClassNotFoundException during eventDelete.");
@@ -175,7 +175,7 @@ public class viewEvents extends javax.swing.JFrame {
         try {
 
             //using defaultListModel to return the data of interest from the resultset. -DC
-            DefaultListModel eventsList = dbWork.dbWorkSelectEvent("root", "harsh19", "SELECT * FROM horizonevent");
+            DefaultListModel eventsList = dbWork.dbWorkSelectEvent(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM horizonevent");
 
             //populating the listbox with data in the defaultListModel. -DC
             viewEventsJlist.setModel(eventsList);

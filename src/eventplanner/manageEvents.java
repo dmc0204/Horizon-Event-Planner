@@ -129,6 +129,10 @@ public class manageEvents extends javax.swing.JFrame {
         System.out.println("View Vendors");
     }else if(eventChild <= 1){
         //Use Case 4 and Use Case 5: AddStaff:RemoveStaff -DC
+        
+        manageEventsClose(); //User selected staff. Closing the manage window, opening the view staff window. -DC
+        viewStaff viewStaffUI = new viewStaff();
+        viewStaffUI.viewStaffOpen();
         System.out.println("View Staff");
         
         
