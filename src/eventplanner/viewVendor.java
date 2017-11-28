@@ -17,16 +17,16 @@ public class viewVendor extends javax.swing.JFrame {
         
         try { //this is my way of populating the staff list box with only the staff for the event the user selected. -DC
             
-            DefaultListModel vendorList = dbWork.dbWorkSelectVendor(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM vendor where eID =" + dbWork.geteid() + "");//using defaultListModel to return the data of interest from the resultset. -DC
+            DefaultListModel vendorList = dbWork.dbWorkSelectVendor(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM vendors where eID =" + dbWork.geteid() + "");//using defaultListModel to return the data of interest from the resultset. -DC
            
             viewVendorJlist.setModel(vendorList); //populating the listbox with data in the defaultListModel. -DC
             
             System.out.println("Vendors added to the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
 
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
-            System.out.println("ClassNotFoundException viewEvents"); //Gotta catch'em all! -DC
+            System.out.println("ClassNotFoundException viewVendor"); //Gotta catch'em all! -DC
         } catch (SQLException f) {//If at first you do not succeed... -DC
-            System.out.println("SQLException viewEvents");//Blame it on your SQL Syntax. -DC
+            System.out.println("SQLException viewVendor ");//Blame it on your SQL Syntax. -DC
         }
         
     }
@@ -148,32 +148,28 @@ public class viewVendor extends javax.swing.JFrame {
        
 
         try { //Try Catch for the dbWorkDeleteEvent method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
-            dbWork.dbWorkDeleteStaff(dbWork.getLogin(), dbWork.getPassword(), dbWork.getSID(j));
+            dbWork.dbWorkDeleteVendor(dbWork.getLogin(), dbWork.getPassword(), dbWork.getVID(j));
            
         } catch (ClassNotFoundException e) {
-            System.out.println("ClassNotFoundException during eventDelete.");
+            System.out.println("ClassNotFoundException during vendorDelete.");
         } catch (SQLException f) {
-            System.out.println("SQLException during eventDelete.");
+            System.out.println("SQLException during vendorDelete.");
         }
 
         try {
 
             //using defaultListModel to return the data of interest from the resultset. -DC
-            DefaultListModel staffList = dbWork.dbWorkSelectStaff(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM staff where eID =" + dbWork.geteid() + "");
+            DefaultListModel vendorList = dbWork.dbWorkSelectVendor(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM vendors where eID =" + dbWork.geteid() + "");
 
             //populating the listbox with data in the defaultListModel. -DC
-            viewVendorJlist.setModel(staffList);
-            /*
-             while(eventsList.next()){ //My stub to see what is in the resultset. -DC
-               System.out.println(eventsList.getString("eName"));                  
-             }  
-            */
+            viewVendorJlist.setModel(vendorList);
+            
             System.out.println("Staff deleted from the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
 
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
-            System.out.println("ClassNotFoundException viewEvents"); //Gotta catch'em all! -DC
+            System.out.println("ClassNotFoundException viewVendors"); //Gotta catch'em all! -DC
         } catch (SQLException f) {//If at first you do not succeed... -DC
-            System.out.println("SQLException viewEvents");//Blame it on your SQL Syntax. -DC
+            System.out.println("SQLException viewVendors");//Blame it on your SQL Syntax. -DC
         }
 
         // TODO add your handling code here:

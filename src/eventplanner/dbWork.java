@@ -259,6 +259,28 @@ public class dbWork {
         
     }
     
+    public static void dbWorkDeleteVendor(String dbLogin, String dbPassword, int vID) throws ClassNotFoundException, SQLException {
+
+        Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
+        String dbLocation = "jdbc:mysql://localhost:3306/horizon"; //setting up the dbLocation. -DC
+        Connection dbConnection = DriverManager.getConnection(dbLocation, dbLogin, dbPassword); //creating a connection to the database. -DC
+        Boolean testConnection = dbConnection.isValid(10); //testing the connection. -DC
+
+        if (testConnection = true) {
+
+            Statement deleteEventSQL = dbConnection.createStatement(); //object to deliver the SQL query or statement. -DC
+            String deleteVendor = "Delete from vendors where vID = " + vID + "";//the SQL statement that uses the passed jID value as the key to deleting the record the user wants to delete. -DC
+            System.out.println(deleteVendor);
+
+            int rowsAffected = deleteEventSQL.executeUpdate(deleteVendor); //passing the number of rows affected by the SQL statement that was passed to the executeUpdate method. -DC
+            String rowResults = String.valueOf(rowsAffected); //converting to string to output to the terminal, my version of a stub as I go. -DC
+            System.out.println(rowResults + " Rows Affected");
+
+            dbConnection.close();
+        }
+
+    }
+    
     public static void dbWorkDeleteJobs(String dbLogin, String dbPassword, int jID) throws ClassNotFoundException, SQLException {
 
         Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
@@ -432,7 +454,7 @@ public class dbWork {
                                      
                     dbWork.setVID(vendorList.getInt("vID")); //my staff ID array so i know which id is referenced by which index in the list box. -DC
 
-                    resultsReturnList.addElement(vendorList.getString("vName") + "        " + vendorList.getString("vFname") + "        " + vendorList.getString("vLname") + "        " + vendorList.getString("vMedium") + "        " + vendorList.getString("vStatus")); //adding the elements of interest for the viewEvent UI. -DC
+                    resultsReturnList.addElement(vendorList.getString("vName") + "        " + vendorList.getString("vFname") + "        " + vendorList.getString("vLname") + "        " + vendorList.getString("vMedium") + "        " + vendorList.getString("vStatus")); //adding the elements of interest for the viewVendor UI. -DC
                 }
                 dbConnection.close();//closing the connection. -DC
                 return resultsReturnList;      //returning the contructed results list from the resultset. -DC
