@@ -298,7 +298,7 @@ public class dbWork {
                 Statement createStaffSQL = dbConnection.createStatement(); //Not positive what is going on here. I am adding an object to another object? -DC
                 ResultSet staffList = createStaffSQL.executeQuery(dbSelect);
 
-                dbWork.clearEID(); //resetting the elements in the event ID list. -DC
+                dbWork.clearJID(); //resetting the elements in the event ID list. -DC
 
                 while (staffList.next()) { //My stub to see what is in the resultset, and populate the listmodel. -DC
 
@@ -346,7 +346,7 @@ public class dbWork {
                 Statement createStaffSQL = dbConnection.createStatement(); //Not positive what is going on here. I am adding an object to another object? -DC
                 ResultSet staffList = createStaffSQL.executeQuery(dbSelect);
 
-                dbWork.clearEID(); //resetting the elements in the event ID list. -DC
+                dbWork.clearSID(); //resetting the elements in the event ID list. -DC
 
                 while (staffList.next()) { //My stub to see what is in the resultset, and populate the listmodel. -DC
 
