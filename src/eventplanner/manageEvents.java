@@ -152,6 +152,10 @@ public class manageEvents extends javax.swing.JFrame {
         
     }else if(eventChild <= 3) {
         //Use Case 8 and Use Case 9: AddSponsor:RemoveSponsor -DC
+        
+        manageEventsClose();
+        viewSponsors viewSponsorsUI = new viewSponsors();
+        viewSponsorsUI.viewSponsorsOpen();
         System.out.println("View Sponsors");
     }
     

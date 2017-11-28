@@ -31,16 +31,8 @@
               <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                      <Component id="labelEventMenuLogo" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                      <Component id="eventMenuPopulateDBButton" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+              <Component id="labelEventMenuLogo" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="94" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -55,9 +47,7 @@
                   <Component id="createEventButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="viewEventButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="9" max="32767" attributes="0"/>
-              <Component id="eventMenuPopulateDBButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,14 +74,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewEventButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="eventMenuPopulateDBButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Populate x1000"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eventMenuPopulateDBButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

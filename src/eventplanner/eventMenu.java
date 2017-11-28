@@ -44,7 +44,6 @@ public class eventMenu extends javax.swing.JFrame {
         labelEventMenuLogo = new javax.swing.JLabel();
         createEventButton = new javax.swing.JButton();
         viewEventButton = new javax.swing.JButton();
-        eventMenuPopulateDBButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,13 +63,6 @@ public class eventMenu extends javax.swing.JFrame {
             }
         });
 
-        eventMenuPopulateDBButton.setText("Populate x1000");
-        eventMenuPopulateDBButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eventMenuPopulateDBButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,13 +74,8 @@ public class eventMenu extends javax.swing.JFrame {
                 .addComponent(viewEventButton)
                 .addGap(113, 113, 113))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(labelEventMenuLogo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(eventMenuPopulateDBButton)))
+                .addGap(83, 83, 83)
+                .addComponent(labelEventMenuLogo)
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -100,9 +87,7 @@ public class eventMenu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(createEventButton)
                     .addComponent(viewEventButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(eventMenuPopulateDBButton)
-                .addContainerGap())
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
@@ -126,19 +111,6 @@ public class eventMenu extends javax.swing.JFrame {
         viewEventsUI.setVisible(true);
 
     }//GEN-LAST:event_viewEventButtonActionPerformed
-
-    private void eventMenuPopulateDBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventMenuPopulateDBButtonActionPerformed
-
-        try {
-        dbWork.eventPopulator();
-        }catch (ClassNotFoundException e) {
-            System.out.println(e);
-        }catch (SQLException j){
-            System.out.println(j);
-        }
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eventMenuPopulateDBButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,7 +149,6 @@ public class eventMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createEventButton;
-    private javax.swing.JButton eventMenuPopulateDBButton;
     private javax.swing.JLabel labelEventMenuLogo;
     private javax.swing.JButton viewEventButton;
     // End of variables declaration//GEN-END:variables

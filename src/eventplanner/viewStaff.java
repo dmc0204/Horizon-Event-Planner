@@ -56,7 +56,6 @@ public class viewStaff extends javax.swing.JFrame {
         viewStaffJlist = new javax.swing.JList<>();
         viewStaffLabel = new javax.swing.JLabel();
         viewStaffBackButton = new javax.swing.JButton();
-        populateStaffButton = new javax.swing.JButton();
         viewStaffDeleteButton = new javax.swing.JButton();
         viewStaffAddButton = new javax.swing.JButton();
 
@@ -73,13 +72,6 @@ public class viewStaff extends javax.swing.JFrame {
         viewStaffBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewStaffBackButtonActionPerformed(evt);
-            }
-        });
-
-        populateStaffButton.setText("Populate Staff");
-        populateStaffButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                populateStaffButtonActionPerformed(evt);
             }
         });
 
@@ -107,13 +99,11 @@ public class viewStaff extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(152, 152, 152)
-                        .addComponent(viewStaffBackButton)
-                        .addGap(34, 34, 34)
-                        .addComponent(populateStaffButton))
+                        .addComponent(viewStaffBackButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(144, 144, 144)
                         .addComponent(viewStaffLabel)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -133,9 +123,7 @@ public class viewStaff extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(viewStaffBackButton)
-                            .addComponent(populateStaffButton))
+                        .addComponent(viewStaffBackButton)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -157,19 +145,6 @@ public class viewStaff extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_viewStaffBackButtonActionPerformed
-
-    private void populateStaffButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_populateStaffButtonActionPerformed
-
-         try {
-        dbWork.staffPopulator();
-        }catch (ClassNotFoundException e) {
-            System.out.println(e);
-        }catch (SQLException j){
-            System.out.println(j);
-        }
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_populateStaffButtonActionPerformed
 
     private void viewStaffDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStaffDeleteButtonActionPerformed
 
@@ -255,7 +230,6 @@ public class viewStaff extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton populateStaffButton;
     private javax.swing.JButton viewStaffAddButton;
     private javax.swing.JButton viewStaffBackButton;
     private javax.swing.JButton viewStaffDeleteButton;
