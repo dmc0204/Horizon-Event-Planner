@@ -126,6 +126,10 @@ public class manageEvents extends javax.swing.JFrame {
     
     if(eventChild <= 0){
         //Use Case 8 and Use Case 9: AddVendor:RemoveVendor -DC
+        
+        manageEventsClose();
+        viewVendor viewVendorUI = new viewVendor();
+        viewVendorUI.viewVendorOpen();
         System.out.println("View Vendors");
     }else if(eventChild <= 1){
         //Use Case 4 and Use Case 5: AddStaff:RemoveStaff -DC

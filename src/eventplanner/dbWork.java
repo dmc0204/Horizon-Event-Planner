@@ -364,7 +364,7 @@ public class dbWork {
             return null;
         }
     }
-
+    
     public static DefaultListModel<Object> dbWorkSelectStaff(String dbLogin, String dbPassword, String dbSelect) throws ClassNotFoundException, SQLException {//add method for database insert queries. -DC
 
         {
@@ -400,6 +400,46 @@ public class dbWork {
             }
 
             System.out.println("No Staff Added.");
+
+            return null;
+        }
+    }
+
+    public static DefaultListModel<Object> dbWorkSelectVendor(String dbLogin, String dbPassword, String dbSelect) throws ClassNotFoundException, SQLException {//add method for database insert queries. -DC
+
+        {
+
+            Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
+            String dbLocation = "jdbc:mysql://localhost:3306/horizon"; //setting up the dbLocation. -DC
+            Connection dbConnection = DriverManager.getConnection(dbLocation, dbLogin, dbPassword); //creating a connection to the database. -DC
+
+            Boolean testConnection = dbConnection.isValid(10); //testing the connection. -DC
+
+            DefaultListModel resultsReturnList = new DefaultListModel();
+
+            if (testConnection = true) {
+                System.out.println("Connected to Database."); //stub to tell me if the connection failed or the query. -DC
+            }
+
+            if (testConnection = true) {
+                System.out.println(dbSelect); //stub to test SQL query input being passed to the database. -DC
+                Statement viewVendorSQL = dbConnection.createStatement(); //Not positive what is going on here. I am adding an object to another object? -DC
+                ResultSet vendorList = viewVendorSQL.executeQuery(dbSelect);
+
+                dbWork.clearVID(); //resetting the staff ID array. -DC
+
+                while (vendorList.next()) { //parallel arrays for storing the primary key for staff with a specific eID foreign key. -DC
+                                     
+                    dbWork.setVID(vendorList.getInt("vID")); //my staff ID array so i know which id is referenced by which index in the list box. -DC
+
+                    resultsReturnList.addElement(vendorList.getString("vName") + "        " + vendorList.getString("vFname") + "        " + vendorList.getString("vLname") + "        " + vendorList.getString("vMedium") + "        " + vendorList.getString("vStatus")); //adding the elements of interest for the viewEvent UI. -DC
+                }
+                dbConnection.close();//closing the connection. -DC
+                return resultsReturnList;      //returning the contructed results list from the resultset. -DC
+
+            }
+
+            System.out.println("No Vendor Added.");
 
             return null;
         }
