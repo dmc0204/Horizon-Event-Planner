@@ -27,16 +27,13 @@ public class viewJobs extends javax.swing.JFrame {
 
             //populating the listbox with data in the defaultListModel. -DC
             viewJobsJlist.setModel(jobsList);
-
-            // while(eventsList.next()){ //My stub to see what is in the resultset. -DC
-            //   System.out.println(eventsList.getString("eName"));                  
-            // }  
+            
             System.out.println("Job added to the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
 
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
-            System.out.println("ClassNotFoundException viewEvents"); //Gotta catch'em all! -DC
+            System.out.println("ClassNotFoundException viewJobs"); //Gotta catch'em all! -DC
         } catch (SQLException f) {//If at first you do not succeed... -DC
-            System.out.println("SQLException viewEvents");//Blame it on your SQL Syntax. -DC
+            System.out.println("SQLException viewJobs");//Blame it on your SQL Syntax. -DC
         }
         
     }
@@ -78,12 +75,27 @@ public class viewJobs extends javax.swing.JFrame {
 
         viewJobsBackButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewJobsBackButton.setText("Back");
+        viewJobsBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewJobsBackButtonActionPerformed(evt);
+            }
+        });
 
         viewJobsDeleteButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewJobsDeleteButton.setText("Delete");
+        viewJobsDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewJobsDeleteButtonActionPerformed(evt);
+            }
+        });
 
         viewJobsAddButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         viewJobsAddButton.setText("Add");
+        viewJobsAddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewJobsAddButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,9 +139,56 @@ public class viewJobs extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void viewJobsBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewJobsBackButtonActionPerformed
+
+    viewJobsClose(); //going from viewJobs to manageEvents UI. -DC
+    manageEvents manageEventsUI = new manageEvents();
+    manageEventsUI.manageEventsOpen();
+        
+    }//GEN-LAST:event_viewJobsBackButtonActionPerformed
+
+    private void viewJobsDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewJobsDeleteButtonActionPerformed
+
+        int j = viewJobsJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork staffID arraylist. -DC
+        System.out.println(j);
+       
+
+        try { //Try Catch for the dbWorkDeleteEvent method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
+            dbWork.dbWorkDeleteJobs(dbWork.getLogin(), dbWork.getPassword(), dbWork.getJID(j));
+           
+        } catch (ClassNotFoundException e) {
+            System.out.println("ClassNotFoundException during jobDelete.");
+        } catch (SQLException f) {
+            System.out.println("SQLException during jobDelete.");
+        }
+        
+        try { //this is my way of populating the staff list box with only the staff for the event the user selected. -DC
+
+            //using defaultListModel to return the data of interest from the resultset. -DC
+            DefaultListModel jobsList = dbWork.dbWorkSelectJobs(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM jobs where eID =" + dbWork.geteid() + "");
+
+            //populating the listbox with data in the defaultListModel. -DC
+            viewJobsJlist.setModel(jobsList);
+            
+            System.out.println("Job added to the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
+
+        } catch (ClassNotFoundException e) { //Catching Errors. -DC
+            System.out.println("ClassNotFoundException viewJobs"); //Gotta catch'em all! -DC
+        } catch (SQLException f) {//If at first you do not succeed... -DC
+            System.out.println("SQLException viewJobs");//Blame it on your SQL Syntax. -DC
+        }
+
+    }//GEN-LAST:event_viewJobsDeleteButtonActionPerformed
+
+    private void viewJobsAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewJobsAddButtonActionPerformed
+
+        viewJobsClose(); //opening the addJobs UI. -DC
+        addJobs addJobsUI = new addJobs();
+        addJobsUI.addJobsOpen();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewJobsAddButtonActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

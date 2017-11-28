@@ -104,6 +104,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewJobsBackButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="viewJobsDeleteButton">
       <Properties>
@@ -112,6 +115,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewJobsDeleteButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="viewJobsAddButton">
       <Properties>
@@ -120,6 +126,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewJobsAddButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -21,16 +21,11 @@ public class viewStaff extends javax.swing.JFrame {
         initComponents();
         
         try { //this is my way of populating the staff list box with only the staff for the event the user selected. -DC
-
-            //using defaultListModel to return the data of interest from the resultset. -DC
-            DefaultListModel staffList = dbWork.dbWorkSelectStaff(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM staff where eID =" + dbWork.geteid() + "");
-
-            //populating the listbox with data in the defaultListModel. -DC
-            viewStaffJlist.setModel(staffList);
-
-            // while(eventsList.next()){ //My stub to see what is in the resultset. -DC
-            //   System.out.println(eventsList.getString("eName"));                  
-            // }  
+            
+            DefaultListModel staffList = dbWork.dbWorkSelectStaff(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM staff where eID =" + dbWork.geteid() + "");//using defaultListModel to return the data of interest from the resultset. -DC
+           
+            viewStaffJlist.setModel(staffList); //populating the listbox with data in the defaultListModel. -DC
+            
             System.out.println("Events added to the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
 
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
@@ -178,8 +173,6 @@ public class viewStaff extends javax.swing.JFrame {
 
     private void viewStaffDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStaffDeleteButtonActionPerformed
 
-//Delete Button Event. Somehow I will take the selected element from the jList and use it to identify a record to delete in the database. -DC
-        //String s = viewEventsJlist.getSelectedValue();
         int j = viewStaffJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork staffID arraylist. -DC
         System.out.println(j);
        

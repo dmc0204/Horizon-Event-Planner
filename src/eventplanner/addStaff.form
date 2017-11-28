@@ -110,32 +110,17 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="addStaffFirstNameInput">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="First Name"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="addStaffLastNameInput">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Last Name"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addStaffLastNameInputActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="addStaffPhoneInput">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Phone"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="addStaffDatetimeInput">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Date and Time"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="addStaffStatusInput">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Status"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="addStaffFirstNameLabel">
       <Properties>

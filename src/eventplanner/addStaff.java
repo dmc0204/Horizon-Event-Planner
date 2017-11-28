@@ -60,20 +60,11 @@ public class addStaff extends javax.swing.JFrame {
         addStaffLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addStaffLabel.setText("Add Staff");
 
-        addStaffFirstNameInput.setText("First Name");
-
-        addStaffLastNameInput.setText("Last Name");
         addStaffLastNameInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addStaffLastNameInputActionPerformed(evt);
             }
         });
-
-        addStaffPhoneInput.setText("Phone");
-
-        addStaffDatetimeInput.setText("Date and Time");
-
-        addStaffStatusInput.setText("Status");
 
         addStaffFirstNameLabel.setText("First Name:");
 
@@ -188,10 +179,10 @@ public class addStaff extends javax.swing.JFrame {
        
         
 
-        String createEventSQL = "INSERT into staff(sFname, sLname, sPhone, sDatetime, sStatus, eID) VALUES (\"" + sFnameIn + "\",\"" + sLnameIn + "\",\"" + sPhoneIn + "\",\"" + sDatetimeIn + "\",\"" + sStatusIn + "\",\"" + dbWork.geteid() + "\")";
+        String addStaffSQL = "INSERT into staff(sFname, sLname, sPhone, sDatetime, sStatus, eID) VALUES (\"" + sFnameIn + "\",\"" + sLnameIn + "\",\"" + sPhoneIn + "\",\"" + sDatetimeIn + "\",\"" + sStatusIn + "\",\"" + dbWork.geteid() + "\")";
 
         try {
-            dbWork.dbWorkAdd(dbWork.getLogin(), dbWork.getPassword(), createEventSQL);
+            dbWork.dbWorkAdd(dbWork.getLogin(), dbWork.getPassword(), addStaffSQL);
             System.out.println("Staff succesfully added."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
             addStaffClose(); //closing add staff Window. -DC
             viewStaff viewStaffUI = new viewStaff(); //Opening Staff Menu. -DC
