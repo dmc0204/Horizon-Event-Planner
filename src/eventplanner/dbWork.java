@@ -233,6 +233,32 @@ public class dbWork {
 
     }
     
+    public static void printReport() throws ClassNotFoundException, SQLException{
+        
+        Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
+        String dbLocation = "jdbc:mysql://localhost:3306/horizon"; //setting up the dbLocation. -DC
+        Connection dbConnection = DriverManager.getConnection(dbLocation, dbLogin, dbPassword); //creating a connection to the database. -DC
+        Boolean testConnection = dbConnection.isValid(10); //testing the connection. -DC
+        
+        if (testConnection = true){ //thinking about printing, far from anything useful yet. -DC
+            
+            Statement printReportSQL = dbConnection.createStatement();
+            String dbSelect = "Select * from horizonevent where eID =" + dbWork.geteid() + "";
+            ResultSet printList = printReportSQL.executeQuery(dbSelect);               
+
+                while (printList.next()) { 
+                                     
+                    //System.out.println(printList.);
+                    
+                }
+                dbConnection.close();//closing the connection. -DC
+            
+            
+        }
+        
+        
+    }
+    
     public static void dbWorkDeleteJobs(String dbLogin, String dbPassword, int jID) throws ClassNotFoundException, SQLException {
 
         Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
