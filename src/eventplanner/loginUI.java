@@ -38,9 +38,11 @@ public class loginUI extends javax.swing.JFrame {
         loginUsernameInput = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         loginEnterButton = new javax.swing.JButton();
+        loginUILogoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Event Planner");
+        setBackground(new java.awt.Color(255, 255, 255));
 
         labelUsername.setText("Username:");
 
@@ -48,7 +50,6 @@ public class loginUI extends javax.swing.JFrame {
 
         loginUsernameInput.setToolTipText("");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cooldev\\Desktop\\Horizon\\EventPlanner\\horizonlogologinTest.png")); // NOI18N
         jLabel1.setText(" ");
 
         loginEnterButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -59,10 +60,16 @@ public class loginUI extends javax.swing.JFrame {
             }
         });
 
+        loginUILogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 62, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -76,19 +83,20 @@ public class loginUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(loginPasswordInput)
-                            .addComponent(loginUsernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(141, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+                            .addComponent(loginUsernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(loginUILogoLabel)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
+                .addComponent(loginUILogoLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUsername)
                     .addComponent(loginUsernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -171,6 +179,7 @@ public class loginUI extends javax.swing.JFrame {
     private javax.swing.JLabel labelUsername;
     private javax.swing.JButton loginEnterButton;
     private javax.swing.JPasswordField loginPasswordInput;
+    private javax.swing.JLabel loginUILogoLabel;
     private javax.swing.JTextField loginUsernameInput;
     // End of variables declaration//GEN-END:variables
 }

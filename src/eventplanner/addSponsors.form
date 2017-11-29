@@ -36,14 +36,11 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="addSponsorPledgeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="addSponsorFnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="addSponsorLnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="addSponsorPhoneLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="addSponsorPledgeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addSponsorFnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addSponsorLnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addSponsorPhoneLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="addSponsorNameLabel" min="-2" max="-2" attributes="0"/>
@@ -60,11 +57,15 @@
                               </Group>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="addSponsorLabel" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="addSponsorLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="addSponsorLogoLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,7 +73,10 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="addSponsorLabel" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="addSponsorLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="addSponsorLogoLabel" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="addSponsorNameInput" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -103,7 +107,7 @@
                   <Component id="addSponsorSubmitButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="addSponsorBackButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -173,6 +177,13 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addSponsorBackButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="addSponsorLogoLabel">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/eventplanner/horizonlogoTiny.png"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

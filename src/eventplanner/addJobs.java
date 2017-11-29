@@ -33,6 +33,7 @@ public class addJobs extends javax.swing.JFrame {
         addJobDatetimeInput = new javax.swing.JTextField();
         addJobTitleLabel = new javax.swing.JLabel();
         addJobDatetimeLabel = new javax.swing.JLabel();
+        addJobsLogoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,6 +47,11 @@ public class addJobs extends javax.swing.JFrame {
 
         addJobBackButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         addJobBackButton.setText("Back");
+        addJobBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addJobBackButtonActionPerformed(evt);
+            }
+        });
 
         addJobLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         addJobLabel.setText("Add Job");
@@ -56,21 +62,18 @@ public class addJobs extends javax.swing.JFrame {
 
         addJobDatetimeLabel.setText("Date and Time:");
 
+        addJobsLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(addJobsSubmitButton)
-                        .addGap(31, 31, 31)
-                        .addComponent(addJobBackButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(addJobLabel)))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addGap(86, 86, 86)
+                .addComponent(addJobsSubmitButton)
+                .addGap(31, 31, 31)
+                .addComponent(addJobBackButton)
+                .addContainerGap(120, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -81,12 +84,23 @@ public class addJobs extends javax.swing.JFrame {
                     .addComponent(addJobTitleInput, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
                     .addComponent(addJobDatetimeInput))
                 .addGap(148, 148, 148))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(addJobLabel)
+                .addGap(58, 58, 58)
+                .addComponent(addJobsLogoLabel)
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(addJobLabel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(addJobsLogoLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(addJobLabel)))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addJobTitleInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -125,6 +139,15 @@ public class addJobs extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_addJobsSubmitButtonActionPerformed
+
+    private void addJobBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJobBackButtonActionPerformed
+
+        addJobsClose();
+        viewJobs viewJobsUI = new viewJobs();
+        viewJobsUI.viewJobsOpen();
+
+     
+    }//GEN-LAST:event_addJobBackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,6 +191,7 @@ public class addJobs extends javax.swing.JFrame {
     private javax.swing.JLabel addJobLabel;
     private javax.swing.JTextField addJobTitleInput;
     private javax.swing.JLabel addJobTitleLabel;
+    private javax.swing.JLabel addJobsLogoLabel;
     private javax.swing.JButton addJobsSubmitButton;
     // End of variables declaration//GEN-END:variables
 }

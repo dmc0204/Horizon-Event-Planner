@@ -58,6 +58,7 @@ public class viewEvents extends javax.swing.JFrame {
         viewEventsManageButton = new javax.swing.JButton();
         viewEventsLabel = new javax.swing.JLabel();
         viewEventsPrintButton = new javax.swing.JButton();
+        viewEventsLogoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +101,8 @@ public class viewEvents extends javax.swing.JFrame {
             }
         });
 
+        viewEventsLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,16 +120,20 @@ public class viewEvents extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(viewEventsLabel)
-                .addGap(242, 242, 242))
+                .addGap(119, 119, 119)
+                .addComponent(viewEventsLogoLabel)
+                .addGap(82, 82, 82))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(viewEventsLabel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewEventsLabel)
+                    .addComponent(viewEventsLogoLabel))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(viewEventsManageButton)
@@ -271,6 +278,7 @@ public class viewEvents extends javax.swing.JFrame {
     private javax.swing.JButton viewEventsBackButton;
     private javax.swing.JList<String> viewEventsJlist;
     private javax.swing.JLabel viewEventsLabel;
+    private javax.swing.JLabel viewEventsLogoLabel;
     private javax.swing.JButton viewEventsManageButton;
     private javax.swing.JButton viewEventsPrintButton;
     // End of variables declaration//GEN-END:variables

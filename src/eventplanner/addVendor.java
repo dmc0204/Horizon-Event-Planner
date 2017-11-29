@@ -45,6 +45,7 @@ public class addVendor extends javax.swing.JFrame {
         addVendorStatusLabel = new javax.swing.JLabel();
         addVendorStatusInput = new javax.swing.JTextField();
         addVendorSubmitButton = new javax.swing.JButton();
+        addVendorLogoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,6 +83,8 @@ public class addVendor extends javax.swing.JFrame {
                 addVendorSubmitButtonActionPerformed(evt);
             }
         });
+
+        addVendorLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,14 +126,21 @@ public class addVendor extends javax.swing.JFrame {
                         .addGap(89, 89, 89))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(addVendorLabel)
-                        .addGap(127, 127, 127))))
+                        .addGap(50, 50, 50)
+                        .addComponent(addVendorLogoLabel)
+                        .addGap(36, 36, 36))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(addVendorLabel)
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(addVendorLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(addVendorLogoLabel)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addVendorNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addVendorNameLabel))
@@ -154,7 +164,7 @@ public class addVendor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addVendorBackButton)
                     .addComponent(addVendorSubmitButton))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -238,6 +248,7 @@ public class addVendor extends javax.swing.JFrame {
     private javax.swing.JLabel addVendorLabel;
     private javax.swing.JTextField addVendorLnameInput;
     private javax.swing.JLabel addVendorLnameLabel;
+    private javax.swing.JLabel addVendorLogoLabel;
     private javax.swing.JTextField addVendorMediumInput;
     private javax.swing.JLabel addVendorMediumLabel;
     private javax.swing.JTextField addVendorNameInput;

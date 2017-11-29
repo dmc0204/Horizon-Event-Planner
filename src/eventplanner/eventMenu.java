@@ -34,10 +34,9 @@ public class eventMenu extends javax.swing.JFrame {
         labelEventMenuLogo = new javax.swing.JLabel();
         createEventButton = new javax.swing.JButton();
         viewEventButton = new javax.swing.JButton();
+        eventMenuLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        labelEventMenuLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cooldev\\Desktop\\Horizon\\EventPlanner\\horizonlogologinTest.png")); // NOI18N
 
         createEventButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         createEventButton.setText("Create Event");
@@ -55,31 +54,37 @@ public class eventMenu extends javax.swing.JFrame {
             }
         });
 
+        eventMenuLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(createEventButton)
-                .addGap(40, 40, 40)
-                .addComponent(viewEventButton)
-                .addGap(60, 60, 60))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(83, 83, 83)
                 .addComponent(labelEventMenuLogo)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(71, 71, 71)
+                .addComponent(eventMenuLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(createEventButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(viewEventButton)
+                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
+                .addComponent(eventMenuLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelEventMenuLogo)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(createEventButton)
-                    .addComponent(viewEventButton))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addComponent(viewEventButton)
+                    .addComponent(createEventButton))
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -138,6 +143,7 @@ public class eventMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createEventButton;
+    private javax.swing.JLabel eventMenuLabel;
     private javax.swing.JLabel labelEventMenuLogo;
     private javax.swing.JButton viewEventButton;
     // End of variables declaration//GEN-END:variables
