@@ -5,6 +5,9 @@
  */
 package eventplanner;
 
+import java.sql.SQLException;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Cooldev
@@ -16,6 +19,21 @@ public class viewSponsors extends javax.swing.JFrame {
      */
     public viewSponsors() {
         initComponents();
+        
+        try { //this is my way of populating the staff list box with only the staff for the event the user selected. -DC
+            
+            DefaultListModel sponsorsList = dbWork.dbWorkSelectSponsors(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM sponsors where eID =" + dbWork.geteid() + "");//using defaultListModel to return the data of interest from the resultset. -DC
+           
+            viewSponsorsJlist.setModel(sponsorsList); //populating the listbox with data in the defaultListModel. -DC
+            
+            System.out.println("Events added to the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
+
+        } catch (ClassNotFoundException e) { //Catching Errors. -DC
+            System.out.println("ClassNotFoundException viewSponsors"); //Gotta catch'em all! -DC
+        } catch (SQLException f) {//If at first you do not succeed... -DC
+            System.out.println("SQLException viewSponsors");//Blame it on your SQL Syntax. -DC
+        }
+        
     }
     
     public void viewSponsorsClose(){
@@ -40,6 +58,11 @@ public class viewSponsors extends javax.swing.JFrame {
     private void initComponents() {
 
         viewSponsorsBackButton = new javax.swing.JButton();
+        viewSponsorsAddButton = new javax.swing.JButton();
+        viewSponsorsDeleteButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        viewSponsorsJlist = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,21 +74,67 @@ public class viewSponsors extends javax.swing.JFrame {
             }
         });
 
+        viewSponsorsAddButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        viewSponsorsAddButton.setText("Add");
+        viewSponsorsAddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewSponsorsAddButtonActionPerformed(evt);
+            }
+        });
+
+        viewSponsorsDeleteButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        viewSponsorsDeleteButton.setText("Delete");
+        viewSponsorsDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewSponsorsDeleteButtonActionPerformed(evt);
+            }
+        });
+
+        jScrollPane1.setViewportView(viewSponsorsJlist);
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setText("View Sponsors");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(226, Short.MAX_VALUE)
-                .addComponent(viewSponsorsBackButton)
-                .addGap(97, 97, 97))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(98, 98, 98)
+                                .addComponent(viewSponsorsBackButton)))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(viewSponsorsDeleteButton)
+                            .addComponent(viewSponsorsAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(jLabel1)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(229, Short.MAX_VALUE)
-                .addComponent(viewSponsorsBackButton)
-                .addGap(37, 37, 37))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(viewSponsorsAddButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewSponsorsDeleteButton)
+                        .addGap(44, 44, 44))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(viewSponsorsBackButton)
+                        .addGap(26, 26, 26))))
         );
 
         pack();
@@ -79,6 +148,39 @@ public class viewSponsors extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_viewSponsorsBackButtonActionPerformed
+
+    private void viewSponsorsDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewSponsorsDeleteButtonActionPerformed
+        
+        int j = viewSponsorsJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork staffID arraylist. -DC
+        System.out.println(j);       
+
+        try { //Try Catch for the dbWorkDeleteEvent method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
+            dbWork.dbWorkDeleteSponsor(dbWork.getLogin(), dbWork.getPassword(), dbWork.getSPID(j));           
+        } catch (ClassNotFoundException e) {
+            System.out.println("ClassNotFoundException during sponsorDelete.");
+        } catch (SQLException f) {
+            System.out.println("SQLException during sponsorDelete.");
+        }
+
+        try {
+            DefaultListModel sponsorsList = dbWork.dbWorkSelectSponsors(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM sponsors where eID =" + dbWork.geteid() + "");//using defaultListModel to return the data of interest from the resultset. -DC
+            viewSponsorsJlist.setModel(sponsorsList);//populating the listbox with data in the defaultListModel. -DC           
+            System.out.println("Sponsors deleted from the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
+        } catch (ClassNotFoundException e) { //Catching Errors. -DC            
+            System.out.println("ClassNotFoundException viewSponsors"); //Gotta catch'em all! -DC            
+        } catch (SQLException f) {//If at first you do not succeed... -DC            
+            System.out.println("SQLException viewSponsors");//Blame it on your SQL Syntax. -DC            
+        }
+    }//GEN-LAST:event_viewSponsorsDeleteButtonActionPerformed
+
+    private void viewSponsorsAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewSponsorsAddButtonActionPerformed
+
+        viewSponsorsClose();
+        addSponsors addSponsorsUI = new addSponsors();
+        addSponsorsUI.addSponsorsOpen();
+
+        
+    }//GEN-LAST:event_viewSponsorsAddButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,6 +218,11 @@ public class viewSponsors extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton viewSponsorsAddButton;
     private javax.swing.JButton viewSponsorsBackButton;
+    private javax.swing.JButton viewSponsorsDeleteButton;
+    private javax.swing.JList<String> viewSponsorsJlist;
     // End of variables declaration//GEN-END:variables
 }

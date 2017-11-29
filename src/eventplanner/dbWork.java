@@ -259,6 +259,28 @@ public class dbWork {
         
     }
     
+    public static void dbWorkDeleteSponsor(String dbLogin, String dbPassword, int spID) throws ClassNotFoundException, SQLException {
+
+        Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
+        String dbLocation = "jdbc:mysql://localhost:3306/horizon"; //setting up the dbLocation. -DC
+        Connection dbConnection = DriverManager.getConnection(dbLocation, dbLogin, dbPassword); //creating a connection to the database. -DC
+        Boolean testConnection = dbConnection.isValid(10); //testing the connection. -DC
+
+        if (testConnection = true) {
+
+            Statement deleteSponsorSQL = dbConnection.createStatement(); //object to deliver the SQL query or statement. -DC
+            String deleteSponsor = "Delete from sponsors where spID = " + spID + "";//the SQL statement that uses the passed spID value as the key to deleting the record the user wants to delete. -DC
+            System.out.println(deleteSponsor);
+
+            int rowsAffected = deleteSponsorSQL.executeUpdate(deleteSponsor); //passing the number of rows affected by the SQL statement that was passed to the executeUpdate method. -DC
+            String rowResults = String.valueOf(rowsAffected); //converting to string to output to the terminal, my version of a stub as I go. -DC
+            System.out.println(rowResults + " Rows Affected");
+
+            dbConnection.close();
+        }
+
+    }
+    
     public static void dbWorkDeleteVendor(String dbLogin, String dbPassword, int vID) throws ClassNotFoundException, SQLException {
 
         Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
@@ -269,7 +291,7 @@ public class dbWork {
         if (testConnection = true) {
 
             Statement deleteEventSQL = dbConnection.createStatement(); //object to deliver the SQL query or statement. -DC
-            String deleteVendor = "Delete from vendors where vID = " + vID + "";//the SQL statement that uses the passed jID value as the key to deleting the record the user wants to delete. -DC
+            String deleteVendor = "Delete from vendors where vID = " + vID + "";//the SQL statement that uses the passed vID value as the key to deleting the record the user wants to delete. -DC
             System.out.println(deleteVendor);
 
             int rowsAffected = deleteEventSQL.executeUpdate(deleteVendor); //passing the number of rows affected by the SQL statement that was passed to the executeUpdate method. -DC
@@ -382,6 +404,46 @@ public class dbWork {
             }
 
             System.out.println("No Jobs Added.");
+
+            return null;
+        }
+    }
+    
+    public static DefaultListModel<Object> dbWorkSelectSponsors(String dbLogin, String dbPassword, String dbSelect) throws ClassNotFoundException, SQLException {//add method for database insert queries. -DC
+
+        {
+
+            Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
+            String dbLocation = "jdbc:mysql://localhost:3306/horizon"; //setting up the dbLocation. -DC
+            Connection dbConnection = DriverManager.getConnection(dbLocation, dbLogin, dbPassword); //creating a connection to the database. -DC
+
+            Boolean testConnection = dbConnection.isValid(10); //testing the connection. -DC
+
+            DefaultListModel resultsReturnList = new DefaultListModel();
+
+            if (testConnection = true) {
+                System.out.println("Connected to Database."); //stub to tell me if the connection failed or the query. -DC
+            }
+
+            if (testConnection = true) {
+                System.out.println(dbSelect); //stub to test SQL query input being passed to the database. -DC
+                Statement viewSponsorsSQL = dbConnection.createStatement(); //Not positive what is going on here. I am adding an object to another object? -DC
+                ResultSet sponsorsList = viewSponsorsSQL.executeQuery(dbSelect);
+
+                dbWork.clearSID(); //resetting the staff ID array. -DC
+
+                while (sponsorsList.next()) { //parallel arrays for storing the primary key for sponsors with a specific eID foreign key. -DC
+                                     
+                    dbWork.setSPID(sponsorsList.getInt("spID")); //my sponsors ID array so i know which id is referenced by which index in the list box. -DC
+
+                    resultsReturnList.addElement(sponsorsList.getString("spName") + "        " + sponsorsList.getString("spFname") + "        " + sponsorsList.getString("spLname") + "        " + sponsorsList.getString("spPhone") + "        " + sponsorsList.getString("spPledge")); //adding the elements of interest for the viewSponsors UI. -DC
+                }
+                dbConnection.close();//closing the connection. -DC
+                return resultsReturnList;      //returning the contructed results list from the resultset. -DC
+
+            }
+
+            System.out.println("No Staff Added.");
 
             return null;
         }
