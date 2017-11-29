@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
 import java.sql.SQLException;
-
 /**
  *
- * @author Cooldev
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class addVendor extends javax.swing.JFrame {
-
     /**
      * Creates new form addVendor
      */
@@ -31,7 +23,6 @@ public class addVendor extends javax.swing.JFrame {
         this.setVisible(true);
         
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -174,7 +165,6 @@ public class addVendor extends javax.swing.JFrame {
         viewVendor viewVendorUI = new viewVendor();
         viewVendorUI.viewVendorOpen();
 
-       
     }//GEN-LAST:event_addVendorBackButtonActionPerformed
 
     private void addVendorLnameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVendorLnameInputActionPerformed
@@ -182,23 +172,20 @@ public class addVendor extends javax.swing.JFrame {
     }//GEN-LAST:event_addVendorLnameInputActionPerformed
 
     private void addVendorSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVendorSubmitButtonActionPerformed
-
-//Submit addStaff event. Going to pass the field data to variables to be passed to the database. -DC
+//Submit Vendor Information. Going to pass the field data to variables to be passed to the database. -DC
         String vFnameIn = addVendorFnameInput.getText();
         String vLnameIn = addVendorLnameInput.getText();
         String vMediumIn = addVendorMediumInput.getText();
         String vNameIn = addVendorNameInput.getText();
         String vStatusIn = addVendorStatusInput.getText();
        
-        
-
         String addVendorSQL = "INSERT into Vendors(vName, vFname, vLname, vMedium, vStatus, eID) VALUES (\"" + vNameIn + "\",\"" + vFnameIn + "\",\"" + vLnameIn + "\",\"" + vMediumIn + "\",\"" + vStatusIn + "\",\"" + dbWork.geteid() + "\")";
 
         try {
             dbWork.dbWorkAdd(dbWork.getLogin(), dbWork.getPassword(), addVendorSQL);
             System.out.println("Staff succesfully added."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
-            addVendorClose(); //closing add vendor Window. -DC
-            viewVendor viewVendorUI = new viewVendor(); //Opening Vendor List Menu. -DC
+            addVendorClose(); //closing addVendor. -DC
+            viewVendor viewVendorUI = new viewVendor(); //Opening viewVendor. -DC
             viewVendorUI.setVisible(true);
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
             System.out.println("ClassNotFoundException");
@@ -206,8 +193,6 @@ public class addVendor extends javax.swing.JFrame {
             System.out.println("SQLException");
         }
 
-
-     
     }//GEN-LAST:event_addVendorSubmitButtonActionPerformed
 
     /**

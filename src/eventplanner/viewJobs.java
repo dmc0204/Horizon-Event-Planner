@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
 import java.sql.SQLException;
 import javax.swing.DefaultListModel;
-
 /**
  *
- * @author dmc02
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class viewJobs extends javax.swing.JFrame {
-
     /**
      * Creates new form viewJobs
      */
@@ -149,11 +141,10 @@ public class viewJobs extends javax.swing.JFrame {
 
     private void viewJobsDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewJobsDeleteButtonActionPerformed
 
-        int j = viewJobsJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork staffID arraylist. -DC
-        System.out.println(j);
-       
+        int j = viewJobsJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork jobsID arraylist. -DC
+        System.out.println(j);       
 
-        try { //Try Catch for the dbWorkDeleteEvent method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
+        try { //Try Catch for the dbWorkDeleteJobs method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
             dbWork.dbWorkDeleteJobs(dbWork.getLogin(), dbWork.getPassword(), dbWork.getJID(j));
            
         } catch (ClassNotFoundException e) {
@@ -162,7 +153,7 @@ public class viewJobs extends javax.swing.JFrame {
             System.out.println("SQLException during jobDelete.");
         }
         
-        try { //this is my way of populating the staff list box with only the staff for the event the user selected. -DC
+        try { //this is my way of populating the jobs list box with only the jobs for the event the user selected. -DC
 
             //using defaultListModel to return the data of interest from the resultset. -DC
             DefaultListModel jobsList = dbWork.dbWorkSelectJobs(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM jobs where eID =" + dbWork.geteid() + "");

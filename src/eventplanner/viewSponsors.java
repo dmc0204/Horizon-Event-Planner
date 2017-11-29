@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
 import java.sql.SQLException;
 import javax.swing.DefaultListModel;
-
 /**
  *
- * @author Cooldev
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class viewSponsors extends javax.swing.JFrame {
-
     /**
      * Creates new form viewSponsors
      */
@@ -22,7 +14,8 @@ public class viewSponsors extends javax.swing.JFrame {
         
         try { //this is my way of populating the staff list box with only the staff for the event the user selected. -DC
             
-            DefaultListModel sponsorsList = dbWork.dbWorkSelectSponsors(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM sponsors where eID =" + dbWork.geteid() + "");//using defaultListModel to return the data of interest from the resultset. -DC
+            //using defaultListModel to return the data of interest from the resultset. -DC
+            DefaultListModel sponsorsList = dbWork.dbWorkSelectSponsors(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM sponsors where eID =" + dbWork.geteid() + "");
            
             viewSponsorsJlist.setModel(sponsorsList); //populating the listbox with data in the defaultListModel. -DC
             
@@ -151,19 +144,27 @@ public class viewSponsors extends javax.swing.JFrame {
 
     private void viewSponsorsDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewSponsorsDeleteButtonActionPerformed
         
-        int j = viewSponsorsJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork staffID arraylist. -DC
+        int j = viewSponsorsJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork sponsorsID arraylist. -DC
         System.out.println(j);       
 
-        try { //Try Catch for the dbWorkDeleteEvent method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
+        try { //Try Catch for the dbWorkDeleteSponsors method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
             dbWork.dbWorkDeleteSponsor(dbWork.getLogin(), dbWork.getPassword(), dbWork.getSPID(j));           
         } catch (ClassNotFoundException e) {
-            System.out.println("ClassNotFoundException during sponsorDelete.");
+            System.out.println("ClassNotFoundException sponsorDelete.");
         } catch (SQLException f) {
-            System.out.println("SQLException during sponsorDelete.");
+            System.out.println("SQLException sponsorDelete.");
         }
 
         try {
-            DefaultListModel sponsorsList = dbWork.dbWorkSelectSponsors(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM sponsors where eID =" + dbWork.geteid() + "");//using defaultListModel to return the data of interest from the resultset. -DC
+            
+            //using defaultListModel to return the data of interest from the resultset. -DC
+            DefaultListModel sponsorsList = dbWork.dbWorkSelectSponsors(
+                            dbWork.getLogin(), 
+                            dbWork.getPassword(), 
+                            "SELECT * FROM sponsors where eID =" + 
+                            dbWork.geteid() + 
+                            "");
+            
             viewSponsorsJlist.setModel(sponsorsList);//populating the listbox with data in the defaultListModel. -DC           
             System.out.println("Sponsors deleted from the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
         } catch (ClassNotFoundException e) { //Catching Errors. -DC            
@@ -178,10 +179,8 @@ public class viewSponsors extends javax.swing.JFrame {
         viewSponsorsClose();
         addSponsors addSponsorsUI = new addSponsors();
         addSponsorsUI.addSponsorsOpen();
-
         
     }//GEN-LAST:event_viewSponsorsAddButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */

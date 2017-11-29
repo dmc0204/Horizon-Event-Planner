@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
-import javax.swing.JOptionPane;
 import java.sql.*;
-
 /**
  *
- * @author Donovan Cummins
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class loginUI extends javax.swing.JFrame {
-
     /**
      * Creates new form loginUI
      */
@@ -32,7 +23,6 @@ public class loginUI extends javax.swing.JFrame {
         this.setVisible(true); //making this visible. This being the loginUI jframe. -DC
 
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -121,8 +111,7 @@ public class loginUI extends javax.swing.JFrame {
 
         String dbName = loginUsernameInput.getText(); //passing the login field text to a string variable -DC
         String dbPass = loginPasswordInput.getText(); //passing the password field text to a string variable -DC
-        Boolean dbConnected = false;
-        
+        Boolean dbConnected = false;        
        
         try {
             dbConnected = dbWork.dbWorkLogin(dbName, dbPass);
@@ -138,9 +127,7 @@ public class loginUI extends javax.swing.JFrame {
             System.out.println("SQLException");
         }
 
-        // TODO add your handling code here:
     }//GEN-LAST:event_loginEnterButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */

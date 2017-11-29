@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
-import java.sql.SQLException;
-
 /**
  *
- * @author Donovan Cummins
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class eventMenu extends javax.swing.JFrame {
-
     /**
      * Creates new form eventMenu
      */
@@ -31,7 +22,6 @@ public class eventMenu extends javax.swing.JFrame {
         this.setVisible(true);
 
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -97,21 +87,18 @@ public class eventMenu extends javax.swing.JFrame {
 
         //Create Event Button Click Event. -DC
         eventMenuClose(); //making the Event Menu invisible. -DC
-
         createEvent createEventUI = new createEvent();
         createEventUI.setVisible(true);
 
-        // TODO add your handling code here:
     }//GEN-LAST:event_createEventButtonActionPerformed
 
     private void viewEventButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEventButtonActionPerformed
 
         eventMenuClose(); //Closing Event Menu. -DC
-        viewEvents viewEventsUI = new viewEvents();//Constructing View Events jframe. -DC
+        viewEvents viewEventsUI = new viewEvents();//Constructing viewEvents jframe. -DC
         viewEventsUI.setVisible(true);
 
     }//GEN-LAST:event_viewEventButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */

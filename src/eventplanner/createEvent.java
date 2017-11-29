@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
-import javax.swing.JOptionPane;
 import java.sql.*;
-
 /**
  *
- * @author Donovan Cummins
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class createEvent extends javax.swing.JFrame {
-
     /**
      * Creates new form createEvent
      */
@@ -32,7 +23,6 @@ public class createEvent extends javax.swing.JFrame {
         this.setVisible(true);
 
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -153,7 +143,7 @@ public class createEvent extends javax.swing.JFrame {
 
     private void createEventSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createEventSubmitButtonActionPerformed
 
-//Submit Click Event. Going to pass the field data to variables to be passed to the database. -DC
+//Submit Event Information. Going to pass the field data to variables to be passed to the database. -DC
         String eNameIn = eventNameInput.getText();
         String eLocationIn = eventLocationInput.getText();
         String eDatetimeIn = eventDatetimeInput.getText();
@@ -165,8 +155,8 @@ public class createEvent extends javax.swing.JFrame {
         try {
             dbWork.dbWorkAdd(dbWork.getLogin(), dbWork.getPassword(), createEventSQL);
             System.out.println("Event succesfully added."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
-            createEventClose(); //closing Create Event Window. -DC
-            eventMenu eventMenuGUI = new eventMenu(); //Opening Event Menu. -DC
+            createEventClose(); //closing createEvent. -DC
+            eventMenu eventMenuGUI = new eventMenu(); //Opening eventMenu. -DC
             eventMenuGUI.setVisible(true);
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
             System.out.println("ClassNotFoundException");

@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
 import java.sql.SQLException;
 import javax.swing.DefaultListModel;
-
 /**
  *
- * @author dmc02
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class viewStaff extends javax.swing.JFrame {
-
     /**
      * Creates new form viewStaff
      */
@@ -22,7 +14,13 @@ public class viewStaff extends javax.swing.JFrame {
         
         try { //this is my way of populating the staff list box with only the staff for the event the user selected. -DC
             
-            DefaultListModel staffList = dbWork.dbWorkSelectStaff(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM staff where eID =" + dbWork.geteid() + "");//using defaultListModel to return the data of interest from the resultset. -DC
+            //using defaultListModel to return the data of interest from the resultset. -DC
+            DefaultListModel staffList = dbWork.dbWorkSelectStaff(
+                            dbWork.getLogin(), 
+                            dbWork.getPassword(), 
+                            "SELECT * FROM staff where eID =" + 
+                            dbWork.geteid() + 
+                            "");
            
             viewStaffJlist.setModel(staffList); //populating the listbox with data in the defaultListModel. -DC
             
@@ -142,17 +140,14 @@ public class viewStaff extends javax.swing.JFrame {
         manageEvents manageEventsUI = new manageEvents();
         manageEventsUI.manageEventsOpen();
 
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_viewStaffBackButtonActionPerformed
 
     private void viewStaffDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStaffDeleteButtonActionPerformed
 
         int j = viewStaffJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork staffID arraylist. -DC
-        System.out.println(j);
-       
+        System.out.println(j);       
 
-        try { //Try Catch for the dbWorkDeleteEvent method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
+        try { //Try Catch for the dbWorkDeleteStaff method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
             dbWork.dbWorkDeleteStaff(dbWork.getLogin(), dbWork.getPassword(), dbWork.getSID(j));
            
         } catch (ClassNotFoundException e) {
@@ -164,15 +159,16 @@ public class viewStaff extends javax.swing.JFrame {
         try {
 
             //using defaultListModel to return the data of interest from the resultset. -DC
-            DefaultListModel staffList = dbWork.dbWorkSelectStaff(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM staff where eID =" + dbWork.geteid() + "");
+            DefaultListModel staffList = dbWork.dbWorkSelectStaff(
+                            dbWork.getLogin(), 
+                            dbWork.getPassword(), 
+                            "SELECT * FROM staff where eID =" + 
+                            dbWork.geteid() + 
+                            "");
 
             //populating the listbox with data in the defaultListModel. -DC
             viewStaffJlist.setModel(staffList);
-            /*
-             while(eventsList.next()){ //My stub to see what is in the resultset. -DC
-               System.out.println(eventsList.getString("eName"));                  
-             }  
-            */
+            
             System.out.println("Staff deleted from the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
 
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
@@ -181,7 +177,6 @@ public class viewStaff extends javax.swing.JFrame {
             System.out.println("SQLException viewEvents");//Blame it on your SQL Syntax. -DC
         }
 
-        // TODO add your handling code here:
     }//GEN-LAST:event_viewStaffDeleteButtonActionPerformed
 
     private void viewStaffAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStaffAddButtonActionPerformed
@@ -190,9 +185,7 @@ public class viewStaff extends javax.swing.JFrame {
         addStaff addStaffUI = new addStaff();
         addStaffUI.addStaffOpen();
 
-        // TODO add your handling code here:
     }//GEN-LAST:event_viewStaffAddButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */

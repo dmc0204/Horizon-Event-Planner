@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
 import java.sql.SQLException;
-
 /**
  *
- * @author Cooldev
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class addSponsors extends javax.swing.JFrame {
 
-    /**
-     * Creates new form addSponsors
-     */
     public addSponsors() {
         initComponents();
     }
@@ -168,22 +158,20 @@ public class addSponsors extends javax.swing.JFrame {
     }//GEN-LAST:event_addSponsorBackButtonActionPerformed
 
     private void addSponsorSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSponsorSubmitButtonActionPerformed
-        //Submit addStaff event. Going to pass the field data to variables to be passed to the database. -DC
+        //Submit Sponsor information. Going to pass the field data to variables to be passed to the database. -DC
         String spFnameIn = addSponsorFnameInput.getText();
         String spLnameIn = addSponsorLnameInput.getText();
         String spNameIn = addSponsorNameInput.getText();
         String spPhoneIn = addSponsorPhoneInput.getText();
         String spPledgeIn = addSponsorPledgeInput.getText();
-       
-        
-
+      
         String addSponsorSQL = "INSERT into sponsors(spName, spFname, spLname, spPhone, spPledge, eID) VALUES (\"" + spNameIn + "\",\"" + spFnameIn + "\",\"" + spLnameIn + "\",\"" + spPhoneIn + "\",\"" + spPledgeIn + "\",\"" + dbWork.geteid() + "\")";
 
         try {
             dbWork.dbWorkAdd(dbWork.getLogin(), dbWork.getPassword(), addSponsorSQL);
             System.out.println("Staff succesfully added."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
             addSponsorsClose(); //closing add staff Window. -DC
-            viewSponsors viewSponsorsUI = new viewSponsors(); //Opening Staff Menu. -DC
+            viewSponsors viewSponsorsUI = new viewSponsors(); //Opening viewSponsors Menu. -DC
             viewSponsorsUI.setVisible(true);
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
             System.out.println("ClassNotFoundException");

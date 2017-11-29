@@ -1,23 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
 import java.sql.SQLException;
 import javax.swing.DefaultListModel;
 /**
  *
- * @author dmc02
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class viewVendor extends javax.swing.JFrame {
    
     public viewVendor() {
         initComponents();
         
-        try { //this is my way of populating the staff list box with only the staff for the event the user selected. -DC
+        try { //this is my way of populating the vendor list box with only the staff for the event the user selected. -DC
             
-            DefaultListModel vendorList = dbWork.dbWorkSelectVendor(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM vendors where eID =" + dbWork.geteid() + "");//using defaultListModel to return the data of interest from the resultset. -DC
+            DefaultListModel vendorList = dbWork.dbWorkSelectVendor(
+                            dbWork.getLogin(), 
+                            dbWork.getPassword(), 
+                            "SELECT * FROM vendors where eID =" + 
+                            dbWork.geteid() + 
+                            "");//using defaultListModel to return the data of interest from the resultset. -DC
            
             viewVendorJlist.setModel(vendorList); //populating the listbox with data in the defaultListModel. -DC
             
@@ -133,21 +133,19 @@ public class viewVendor extends javax.swing.JFrame {
 
     private void viewVendorBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewVendorBackButtonActionPerformed
 
-        viewVendorClose(); //closing the view staff window and opening the manage events window. -DC
+        viewVendorClose(); //closing the viewVendor window and opening the manage events window. -DC
         manageEvents manageEventsUI = new manageEvents();
         manageEventsUI.manageEventsOpen();
 
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_viewVendorBackButtonActionPerformed
 
     private void viewVendorDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewVendorDeleteButtonActionPerformed
 
-        int j = viewVendorJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork staffID arraylist. -DC
+        int j = viewVendorJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork vendorID arraylist. -DC
         System.out.println(j);
        
 
-        try { //Try Catch for the dbWorkDeleteEvent method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
+        try { //Try Catch for the dbWorkDeleteVendor method. Passing selected index at the time delete is pressed and passing the delete command to the database. -DC
             dbWork.dbWorkDeleteVendor(dbWork.getLogin(), dbWork.getPassword(), dbWork.getVID(j));
            
         } catch (ClassNotFoundException e) {
@@ -159,7 +157,12 @@ public class viewVendor extends javax.swing.JFrame {
         try {
 
             //using defaultListModel to return the data of interest from the resultset. -DC
-            DefaultListModel vendorList = dbWork.dbWorkSelectVendor(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM vendors where eID =" + dbWork.geteid() + "");
+            DefaultListModel vendorList = dbWork.dbWorkSelectVendor(
+                            dbWork.getLogin(), 
+                            dbWork.getPassword(), 
+                            "SELECT * FROM vendors where eID =" + 
+                            dbWork.geteid() + 
+                            "");
 
             //populating the listbox with data in the defaultListModel. -DC
             viewVendorJlist.setModel(vendorList);
@@ -181,9 +184,7 @@ public class viewVendor extends javax.swing.JFrame {
         addVendor addVendorUI = new addVendor();
         addVendorUI.addVendorOpen();
 
-        // TODO add your handling code here:
     }//GEN-LAST:event_viewVendorAddButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */

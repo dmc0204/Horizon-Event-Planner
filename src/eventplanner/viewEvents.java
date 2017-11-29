@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
-import javax.swing.JOptionPane;
 import javax.swing.*;
 import java.sql.*;
-
 /**
  *
- * @author Donovan Cummins
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class viewEvents extends javax.swing.JFrame {
-
     /**
      * Creates new form viewEvents
      */
@@ -29,9 +20,6 @@ public class viewEvents extends javax.swing.JFrame {
             //populating the listbox with data in the defaultListModel. -DC
             viewEventsJlist.setModel(eventsList);
 
-            // while(eventsList.next()){ //My stub to see what is in the resultset. -DC
-            //   System.out.println(eventsList.getString("eName"));                  
-            // }  
             System.out.println("Events added to the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
 
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
@@ -52,7 +40,6 @@ public class viewEvents extends javax.swing.JFrame {
         this.setVisible(true);
 
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -173,8 +160,6 @@ public class viewEvents extends javax.swing.JFrame {
 
     private void viewEventDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEventDeleteButtonActionPerformed
 
-        //Delete Button Event. Somehow I will take the selected element from the jList and use it to identify a record to delete in the database. -DC
-        //String s = viewEventsJlist.getSelectedValue();
         int j = viewEventsJlist.getSelectedIndex(); //passing the selected index value to use to reference the right value in the dbWork eventID arraylist. -DC
         System.out.println(j);
        
@@ -183,9 +168,14 @@ public class viewEvents extends javax.swing.JFrame {
             dbWork.dbWorkDeleteEvent(dbWork.getLogin(), dbWork.getPassword(), dbWork.getEID(j));
            
         } catch (ClassNotFoundException e) {
-            System.out.println("ClassNotFoundException during eventDelete.");
+            
+            System.out.println(e.getStackTrace());
+            System.out.println("ClassNotFoundException eventDelete.");
+            
         } catch (SQLException f) {
-            System.out.println("SQLException during eventDelete.");
+            
+            System.out.println(f.getStackTrace());
+            System.out.println("SQLException eventDelete.");
         }
 
         try {
@@ -195,14 +185,11 @@ public class viewEvents extends javax.swing.JFrame {
 
             //populating the listbox with data in the defaultListModel. -DC
             viewEventsJlist.setModel(eventsList);
-            /*
-             while(eventsList.next()){ //My stub to see what is in the resultset. -DC
-               System.out.println(eventsList.getString("eName"));                  
-             }  
-            */
+                        
             System.out.println("Event deleted from the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
 
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
+            System.out.println(e.getStackTrace());
             System.out.println("ClassNotFoundException viewEvents"); //Gotta catch'em all! -DC
         } catch (SQLException f) {//If at first you do not succeed... -DC
             System.out.println("SQLException viewEvents");//Blame it on your SQL Syntax. -DC
@@ -213,29 +200,33 @@ public class viewEvents extends javax.swing.JFrame {
 
     private void viewEventsManageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEventsManageButtonActionPerformed
 
-       
-        
         if(viewEventsJlist.getSelectedIndex() >= 0){ //checking that something is selected. -DC
+            
+        //going into the event array to get the event id for the selected event and passing it to an event id integer to be used by other objects. -DC 
+        dbWork.seteid(dbWork.getEID(viewEventsJlist.getSelectedIndex())); 
         
-        dbWork.seteid(dbWork.getEID(viewEventsJlist.getSelectedIndex())); //going into the event array to get the event id for the selected event and passing it to an event id integer to be used by other objects. -DC
         System.out.println(dbWork.geteid());
+        
         viewEventsClose(); //typical method I use to switch between jframes. -DC
         manageEvents manageEventsUI = new manageEvents();
         manageEventsUI.setVisible(true);
         
         }
         
-        
-
-    
     }//GEN-LAST:event_viewEventsManageButtonActionPerformed
 
     private void viewEventsPrintButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEventsPrintButtonActionPerformed
-       
+        /*
+        
+        This is the interface side of print report. Just need to build the class. -DC
+        
+        */
         dbWork.seteid(dbWork.getEID(viewEventsJlist.getSelectedIndex())); //setting the event ID that the printReport method will use. -DC
         
         try{
+            
         dbWork.printReport();
+        
         }catch(ClassNotFoundException e){
             
         }catch(SQLException j){

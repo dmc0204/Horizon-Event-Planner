@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
 import java.sql.SQLException;
-
 /**
  *
- * @author dmc02
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class addStaff extends javax.swing.JFrame {
-
     /**
      * Creates new form addStaff
      */
@@ -59,12 +51,6 @@ public class addStaff extends javax.swing.JFrame {
 
         addStaffLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addStaffLabel.setText("Add Staff");
-
-        addStaffLastNameInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addStaffLastNameInputActionPerformed(evt);
-            }
-        });
 
         addStaffFirstNameLabel.setText("First Name:");
 
@@ -165,27 +151,24 @@ public class addStaff extends javax.swing.JFrame {
         viewStaff viewStaffUI = new viewStaff();
         viewStaffUI.viewStaffOpen();
 
-        // TODO add your handling code here:
     }//GEN-LAST:event_addStaffBackButtonActionPerformed
 
     private void addStaffSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStaffSubmitButtonActionPerformed
 
-//Submit addStaff event. Going to pass the field data to variables to be passed to the database. -DC
+//Submit Staff Information. Going to pass the field data to variables to be passed to the database. -DC
         String sFnameIn = addStaffFirstNameInput.getText();
         String sLnameIn = addStaffLastNameInput.getText();
         String sPhoneIn = addStaffPhoneInput.getText();
         String sDatetimeIn = addStaffDatetimeInput.getText();
-        String sStatusIn = addStaffStatusInput.getText();
-       
+        String sStatusIn = addStaffStatusInput.getText();     
         
-
         String addStaffSQL = "INSERT into staff(sFname, sLname, sPhone, sDatetime, sStatus, eID) VALUES (\"" + sFnameIn + "\",\"" + sLnameIn + "\",\"" + sPhoneIn + "\",\"" + sDatetimeIn + "\",\"" + sStatusIn + "\",\"" + dbWork.geteid() + "\")";
 
         try {
             dbWork.dbWorkAdd(dbWork.getLogin(), dbWork.getPassword(), addStaffSQL);
             System.out.println("Staff succesfully added."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
-            addStaffClose(); //closing add staff Window. -DC
-            viewStaff viewStaffUI = new viewStaff(); //Opening Staff Menu. -DC
+            addStaffClose(); //closing addStaff Window. -DC
+            viewStaff viewStaffUI = new viewStaff(); //Opening viewStaff. -DC
             viewStaffUI.setVisible(true);
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
             System.out.println("ClassNotFoundException");
@@ -193,14 +176,7 @@ public class addStaff extends javax.swing.JFrame {
             System.out.println("SQLException");
         }
 
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_addStaffSubmitButtonActionPerformed
-
-    private void addStaffLastNameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStaffLastNameInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addStaffLastNameInputActionPerformed
-
     /**
      * @param args the command line arguments
      */

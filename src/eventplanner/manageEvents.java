@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
 /**
  *
- * @author Cooldev
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class manageEvents extends javax.swing.JFrame {
-
     /**
      * Creates new form manageEvents
      */
@@ -131,15 +124,14 @@ public class manageEvents extends javax.swing.JFrame {
         viewVendor viewVendorUI = new viewVendor();
         viewVendorUI.viewVendorOpen();
         System.out.println("View Vendors");
+        
     }else if(eventChild <= 1){
         //Use Case 4 and Use Case 5: AddStaff:RemoveStaff -DC
         
         manageEventsClose(); //User selected staff. Closing the manage window, opening the view staff window. -DC
         viewStaff viewStaffUI = new viewStaff();
         viewStaffUI.viewStaffOpen();
-        System.out.println("View Staff");
-        
-        
+        System.out.println("View Staff");    
         
     }else if(eventChild <= 2){
         //Use Case 6 and Use Case 7: AddJob:RemoveJob -DC
@@ -149,7 +141,6 @@ public class manageEvents extends javax.swing.JFrame {
         viewJobsUI.viewJobsOpen();        
         System.out.println("View Jobs");
         
-        
     }else if(eventChild <= 3) {
         //Use Case 8 and Use Case 9: AddSponsor:RemoveSponsor -DC
         
@@ -157,6 +148,7 @@ public class manageEvents extends javax.swing.JFrame {
         viewSponsors viewSponsorsUI = new viewSponsors();
         viewSponsorsUI.viewSponsorsOpen();
         System.out.println("View Sponsors");
+        
     }
     
      
@@ -170,7 +162,6 @@ public class manageEvents extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_manageEventsBackButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */

@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eventplanner;
-
 import java.sql.SQLException;
-
 /**
  *
- * @author Cooldev
+ * @author Donovan Cummins - (Team Horizon)
  */
 public class addJobs extends javax.swing.JFrame {
 
-    /**
-     * Creates new form addJobs
-     */
     public addJobs() {
         initComponents();
     }
@@ -124,9 +114,9 @@ public class addJobs extends javax.swing.JFrame {
         
         try {
             dbWork.dbWorkAdd(dbWork.getLogin(), dbWork.getPassword(), addJobSQL);
-            System.out.println("Staff succesfully added."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
-            addJobsClose(); //closing add staff Window. -DC
-            viewJobs viewJobsUI = new viewJobs(); //Opening Staff Menu. -DC
+            System.out.println("Job succesfully added."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
+            addJobsClose(); //closing addJob Window. -DC
+            viewJobs viewJobsUI = new viewJobs(); //Opening viewJob. -DC
             viewJobsUI.viewJobsOpen();
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
             System.out.println("ClassNotFoundException");
@@ -134,7 +124,6 @@ public class addJobs extends javax.swing.JFrame {
             System.out.println("SQLException");
         }
 
-        
     }//GEN-LAST:event_addJobsSubmitButtonActionPerformed
 
     /**
