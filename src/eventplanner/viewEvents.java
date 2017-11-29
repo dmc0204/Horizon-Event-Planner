@@ -1,6 +1,7 @@
 package eventplanner;
 import javax.swing.*;
 import java.sql.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Donovan Cummins - (Team Horizon)
@@ -16,10 +17,11 @@ public class viewEvents extends javax.swing.JFrame {
 
             //using defaultListModel to return the data of interest from the resultset. -DC
             DefaultListModel eventsList = dbWork.dbWorkSelectEvent(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM horizonevent");
-
+            //DefaultTableModel eventsList = dbWork.dbWorkSelectEvent(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM horizonevent");
             //populating the listbox with data in the defaultListModel. -DC
+            //viewEventsJtable.setModel(eventsListTable);
             viewEventsJlist.setModel(eventsList);
-
+            
             System.out.println("Events added to the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
 
         } catch (ClassNotFoundException e) { //Catching Errors. -DC
@@ -59,11 +61,11 @@ public class viewEvents extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        viewEventsJlist.setFont(new java.awt.Font("Dialog", 0, 8)); // NOI18N
+        viewEventsJlist.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         viewEventsJlist.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(viewEventsJlist);
 
-        viewEventsBackButton.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        viewEventsBackButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         viewEventsBackButton.setText("Back");
         viewEventsBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +73,7 @@ public class viewEvents extends javax.swing.JFrame {
             }
         });
 
-        viewEventDeleteButton.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        viewEventDeleteButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         viewEventDeleteButton.setText("Delete");
         viewEventDeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +81,7 @@ public class viewEvents extends javax.swing.JFrame {
             }
         });
 
-        viewEventsManageButton.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        viewEventsManageButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         viewEventsManageButton.setText("Manage");
         viewEventsManageButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,10 +89,10 @@ public class viewEvents extends javax.swing.JFrame {
             }
         });
 
-        viewEventsLabel.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        viewEventsLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         viewEventsLabel.setText("View Events");
 
-        viewEventsPrintButton.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        viewEventsPrintButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         viewEventsPrintButton.setText("Print");
         viewEventsPrintButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,47 +105,38 @@ public class viewEvents extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(viewEventsBackButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(viewEventsPrintButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(viewEventsManageButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(viewEventDeleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(77, 77, 77)
-                                .addComponent(viewEventsLabel)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(viewEventDeleteButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                    .addComponent(viewEventsPrintButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                    .addComponent(viewEventsBackButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewEventsManageButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(viewEventsLabel)
+                .addGap(242, 242, 242))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(21, 21, 21)
                 .addComponent(viewEventsLabel)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                        .addComponent(viewEventsBackButton)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(viewEventsManageButton)
-                        .addGap(42, 42, 42)
-                        .addComponent(viewEventDeleteButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(viewEventsPrintButton)
-                        .addGap(25, 25, 25))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(viewEventsManageButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewEventDeleteButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewEventsPrintButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewEventsBackButton)
+                .addGap(46, 46, 46))
         );
 
         pack();
@@ -185,6 +178,9 @@ public class viewEvents extends javax.swing.JFrame {
 
             //populating the listbox with data in the defaultListModel. -DC
             viewEventsJlist.setModel(eventsList);
+            
+            //DefaultTableModel eventsList = dbWork.dbWorkSelectEvent(dbWork.getLogin(), dbWork.getPassword(), "SELECT * FROM horizonevent");
+            //viewEventsJtable.setModel(eventsList);
                         
             System.out.println("Event deleted from the list."); //Stub feedback. Followed by copy and pasted back button code for the same object. -DC
 

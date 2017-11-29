@@ -38,7 +38,7 @@ public class manageEvents extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        manageEventJlist.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        manageEventJlist.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         manageEventJlist.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Vendors", "Staff", "Jobs", "Sponsors" };
             public int getSize() { return strings.length; }
@@ -46,7 +46,7 @@ public class manageEvents extends javax.swing.JFrame {
         });
         manageEventsJlist.setViewportView(manageEventJlist);
 
-        manageEventsViewButton.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        manageEventsViewButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         manageEventsViewButton.setText("View");
         manageEventsViewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,7 +54,7 @@ public class manageEvents extends javax.swing.JFrame {
             }
         });
 
-        manageEventsBackButton.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        manageEventsBackButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         manageEventsBackButton.setText("Back");
         manageEventsBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +62,7 @@ public class manageEvents extends javax.swing.JFrame {
             }
         });
 
-        manageEventsLabel.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        manageEventsLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         manageEventsLabel.setText("Manage Event");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -72,35 +72,34 @@ public class manageEvents extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(manageEventsViewButton))
-                            .addComponent(manageEventsLabel)))
+                        .addGap(86, 86, 86)
+                        .addComponent(manageEventsLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(manageEventsBackButton)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                        .addGap(135, 135, 135)
+                        .addComponent(manageEventsBackButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(manageEventsViewButton)))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(manageEventsLabel)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(manageEventsLabel)
-                        .addGap(29, 29, 29)
-                        .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(31, 31, 31)
                         .addComponent(manageEventsViewButton)
-                        .addGap(67, 67, 67)))
+                        .addGap(99, 99, 99))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addComponent(manageEventsBackButton)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();

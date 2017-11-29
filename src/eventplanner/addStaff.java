@@ -49,7 +49,7 @@ public class addStaff extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        addStaffLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addStaffLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         addStaffLabel.setText("Add Staff");
 
         addStaffFirstNameLabel.setText("First Name:");
@@ -62,7 +62,7 @@ public class addStaff extends javax.swing.JFrame {
 
         addStaffStatusLabel.setText("Status:");
 
-        addStaffSubmitButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addStaffSubmitButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         addStaffSubmitButton.setText("Submit");
         addStaffSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,7 +70,7 @@ public class addStaff extends javax.swing.JFrame {
             }
         });
 
-        addStaffBackButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        addStaffBackButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         addStaffBackButton.setText("Back");
         addStaffBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +89,7 @@ public class addStaff extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(107, Short.MAX_VALUE)
+                        .addContainerGap(100, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(addStaffFirstNameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +139,7 @@ public class addStaff extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addStaffSubmitButton)
                     .addComponent(addStaffBackButton))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();

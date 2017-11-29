@@ -39,6 +39,7 @@ public class eventMenu extends javax.swing.JFrame {
 
         labelEventMenuLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cooldev\\Desktop\\Horizon\\EventPlanner\\horizonlogologinTest.png")); // NOI18N
 
+        createEventButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         createEventButton.setText("Create Event");
         createEventButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,6 +47,7 @@ public class eventMenu extends javax.swing.JFrame {
             }
         });
 
+        viewEventButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         viewEventButton.setText("View Events");
         viewEventButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,9 +62,9 @@ public class eventMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(createEventButton)
-                .addGap(34, 34, 34)
+                .addGap(40, 40, 40)
                 .addComponent(viewEventButton)
-                .addGap(113, 113, 113))
+                .addGap(60, 60, 60))
             .addGroup(layout.createSequentialGroup()
                 .addGap(83, 83, 83)
                 .addComponent(labelEventMenuLogo)
@@ -77,7 +79,7 @@ public class eventMenu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(createEventButton)
                     .addComponent(viewEventButton))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();

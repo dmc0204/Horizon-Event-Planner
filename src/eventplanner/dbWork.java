@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.*;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Donovan Cummins - (Team Horizon)
@@ -524,7 +525,7 @@ public class dbWork {
         }
     }
     
-    public static DefaultListModel<Object> dbWorkSelectEvent(String dbLogin, String dbPassword, String dbSelect) throws ClassNotFoundException, SQLException {//add method for database insert queries. -DC
+    public static DefaultListModel dbWorkSelectEvent(String dbLogin, String dbPassword, String dbSelect) throws ClassNotFoundException, SQLException {//add method for database insert queries. -DC
         {
             Class.forName("org.gjt.mm.mysql.Driver"); //setting up the mysql driver for jdbc objects to use. -DC
             String dbLocation = "jdbc:mysql://localhost:3306/horizon"; //setting up the dbLocation. -DC
@@ -533,7 +534,8 @@ public class dbWork {
             Boolean testConnection = dbConnection.isValid(10); //testing the connection. -DC
 
             DefaultListModel resultsReturnList = new DefaultListModel();
-
+            DefaultTableModel resultsReturnListTable = new DefaultTableModel();
+            
             if (testConnection = true) {
                 System.out.println("Connected to Database."); //stub to tell me if the connection failed or the query. -DC
             }
@@ -548,6 +550,17 @@ public class dbWork {
                     
                     dbWork.setEID(eventList.getInt("eID"));//adding the primary key at the same index as it is populated in the listbox. -DC
 
+                    /*
+                    Object[] objects = new Object[3];
+                    for(int i=0;i<3;i++){
+                        
+                        objects[i] = eventList.getObject(i);
+                        
+                    }
+                    
+                    resultsReturnListTable.addRow(objects);
+                    */
+                    
                     resultsReturnList.addElement(
                                     eventList.getString("eName") + "        " + 
                                     eventList.getString("eLocation") + "        " + 
