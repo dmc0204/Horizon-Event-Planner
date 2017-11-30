@@ -561,11 +561,11 @@ public class dbWork {
                     resultsReturnListTable.addRow(objects);
                     */
                     
-                    String eName = eventList.getString("eName"); //feeding into string variables so they can be fed into a factory class for formating. -DC
-                    String eLocation = eventList.getString("eLocation");
-                    String eDatetime = eventList.getString("eDatetime");
+                    String eName = tableBuilder.rowBuilder(3, eventList.getString("eName")); //feeding into string variables so they can be fed into a factory class for formating. -DC
+                    String eLocation = tableBuilder.rowBuilder(3, eventList.getString("eLocation"));
+                    String eDatetime = tableBuilder.rowBuilder(3, eventList.getString("eDatetime"));
                     
-                    resultsReturnList.addElement(eName + "," + eLocation + "," + eDatetime);
+                    resultsReturnList.addElement(eName + eLocation + eDatetime);
                     
                    /* resultsReturnList.addElement(
                                     eventList.getString("eName") + "        " + 
