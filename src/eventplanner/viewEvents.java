@@ -63,6 +63,7 @@ public class viewEvents extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         viewEventsJlist.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewEventsJlist.setFont(new java.awt.Font("Lucida Console", 1, 14)); // NOI18N
         viewEventsJlist.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(viewEventsJlist);
 
