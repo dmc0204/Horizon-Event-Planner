@@ -43,8 +43,10 @@ public class createEvent extends javax.swing.JFrame {
         createEventMenuLabel = new javax.swing.JLabel();
         createEventSubmitButton = new javax.swing.JButton();
         createEventBackButton = new javax.swing.JButton();
+        createEventLogoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         eventNameLabel.setText("Event Name:");
 
@@ -57,6 +59,7 @@ public class createEvent extends javax.swing.JFrame {
         createEventMenuLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         createEventMenuLabel.setText("Create Event");
 
+        createEventSubmitButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         createEventSubmitButton.setText("Submit");
         createEventSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +67,7 @@ public class createEvent extends javax.swing.JFrame {
             }
         });
 
+        createEventBackButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         createEventBackButton.setText("Back");
         createEventBackButton.setToolTipText("");
         createEventBackButton.addActionListener(new java.awt.event.ActionListener() {
@@ -72,40 +76,50 @@ public class createEvent extends javax.swing.JFrame {
             }
         });
 
+        createEventLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(createEventSubmitButton)
-                        .addGap(35, 35, 35)
-                        .addComponent(createEventBackButton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(createEventBackButton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(eventDatetimeLabel)
-                            .addComponent(eventLocationLabel)
-                            .addComponent(eventNameLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(eventNameInput)
-                            .addComponent(eventLocationInput)
-                            .addComponent(eventDatetimeInput)
-                            .addComponent(eventSizeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(createEventMenuLabel)))
-                .addContainerGap(118, Short.MAX_VALUE))
+                            .addComponent(createEventMenuLabel)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(eventDatetimeLabel)
+                                    .addComponent(eventLocationLabel)
+                                    .addComponent(eventNameLabel)
+                                    .addComponent(createEventSubmitButton))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(eventNameInput)
+                                    .addComponent(eventLocationInput)
+                                    .addComponent(eventDatetimeInput)
+                                    .addComponent(eventSizeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addComponent(createEventLogoLabel)
+                        .addGap(28, 28, 28))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(createEventMenuLabel)
-                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(createEventMenuLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(createEventLogoLabel)))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(eventNameLabel)
                     .addComponent(eventNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -121,11 +135,11 @@ public class createEvent extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(eventSizeInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(createEventSubmitButton)
-                    .addComponent(createEventBackButton))
-                .addContainerGap(61, Short.MAX_VALUE))
+                    .addComponent(createEventBackButton)
+                    .addComponent(createEventSubmitButton))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -203,6 +217,7 @@ public class createEvent extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createEventBackButton;
+    private javax.swing.JLabel createEventLogoLabel;
     private javax.swing.JLabel createEventMenuLabel;
     private javax.swing.JButton createEventSubmitButton;
     private javax.swing.JTextField eventDatetimeInput;

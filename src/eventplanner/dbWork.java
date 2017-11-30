@@ -561,10 +561,18 @@ public class dbWork {
                     resultsReturnListTable.addRow(objects);
                     */
                     
-                    resultsReturnList.addElement(
+                    String eName = eventList.getString("eName"); //feeding into string variables so they can be fed into a factory class for formating. -DC
+                    String eLocation = eventList.getString("eLocation");
+                    String eDatetime = eventList.getString("eDatetime");
+                    
+                    resultsReturnList.addElement(eName + "," + eLocation + "," + eDatetime);
+                    
+                   /* resultsReturnList.addElement(
                                     eventList.getString("eName") + "        " + 
                                     eventList.getString("eLocation") + "        " + 
                                     eventList.getString("eDatetime")); //adding the elements of interest for the viewEvent UI. -DC
+                    */
+                   
                 }
                 dbConnection.close();//closing the connection. -DC
                 return resultsReturnList;//returning the contructed results list from the resultset. -DC
@@ -654,7 +662,7 @@ public class dbWork {
 
         }
 
-        System.out.println("Event added.");
+        System.out.println("Event added.");//test git. -dc
 
     }
     

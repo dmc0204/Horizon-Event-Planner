@@ -44,6 +44,7 @@ public class addSponsors extends javax.swing.JFrame {
         addSponsorPledgeLabel = new javax.swing.JLabel();
         addSponsorSubmitButton = new javax.swing.JButton();
         addSponsorBackButton = new javax.swing.JButton();
+        addSponsorLogoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +77,8 @@ public class addSponsors extends javax.swing.JFrame {
             }
         });
 
+        addSponsorLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,13 +95,11 @@ public class addSponsors extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(addSponsorPledgeLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(addSponsorFnameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(addSponsorLnameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(addSponsorPhoneLabel, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(addSponsorPledgeLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(addSponsorFnameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(addSponsorLnameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(addSponsorPhoneLabel, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(addSponsorNameLabel)
                                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -110,14 +111,19 @@ public class addSponsors extends javax.swing.JFrame {
                                     .addComponent(addSponsorFnameInput)
                                     .addComponent(addSponsorPhoneInput))
                                 .addGap(31, 31, 31))
-                            .addComponent(addSponsorLabel))))
-                .addContainerGap(72, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(addSponsorLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(addSponsorLogoLabel)))))
+                .addGap(37, 37, 37))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(addSponsorLabel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(addSponsorLabel)
+                    .addComponent(addSponsorLogoLabel))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addSponsorNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,7 +148,7 @@ public class addSponsors extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addSponsorSubmitButton)
                     .addComponent(addSponsorBackButton))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -222,6 +228,7 @@ public class addSponsors extends javax.swing.JFrame {
     private javax.swing.JLabel addSponsorLabel;
     private javax.swing.JTextField addSponsorLnameInput;
     private javax.swing.JLabel addSponsorLnameLabel;
+    private javax.swing.JLabel addSponsorLogoLabel;
     private javax.swing.JTextField addSponsorNameInput;
     private javax.swing.JLabel addSponsorNameLabel;
     private javax.swing.JTextField addSponsorPhoneInput;
