@@ -389,8 +389,8 @@ public class dbWork {
                     dbWork.setJID(jobsList.getInt("jID")); //my jobs ID array so i know which id is referenced by which index in the list box. -DC
 
                     resultsReturnList.addElement(
-                                    jobsList.getString("jTitle") + "        " + 
-                                    jobsList.getString("jDatetime")); //adding the elements of interest for the viewJobs UI. -DC
+                                    tableBuilder.rowBuilder(2,jobsList.getString("jTitle")) +
+                                    tableBuilder.rowBuilder(2,jobsList.getString("jDatetime"))); //adding the elements of interest for the viewJobs UI. -DC
                 }
                 dbConnection.close();//closing the connection. -DC
                 return resultsReturnList;//returning the contructed results list from the resultset. -DC
@@ -429,11 +429,11 @@ public class dbWork {
                     dbWork.setSPID(sponsorsList.getInt("spID")); //my sponsors ID array so i know which id is referenced by which index in the list box. -DC
 
                     resultsReturnList.addElement(
-                                    sponsorsList.getString("spName") + "        " + 
-                                    sponsorsList.getString("spFname") + "        " + 
-                                    sponsorsList.getString("spLname") + "        " + 
-                                    sponsorsList.getString("spPhone") + "        " + 
-                                    sponsorsList.getString("spPledge")); //adding the elements of interest for the viewSponsors UI. -DC
+                                    tableBuilder.rowBuilder(5,sponsorsList.getString("spName")) +
+                                    tableBuilder.rowBuilder(5,sponsorsList.getString("spFname")) + 
+                                    tableBuilder.rowBuilder(5,sponsorsList.getString("spLname"))+
+                                    tableBuilder.rowBuilder(5,sponsorsList.getString("spPhone")) +
+                                    tableBuilder.rowBuilder(5,sponsorsList.getString("spPledge"))); //adding the elements of interest for the viewSponsors UI. -DC
                 }
                 dbConnection.close();//closing the connection. -DC
                 return resultsReturnList;      //returning the contructed results list from the resultset. -DC
@@ -471,11 +471,11 @@ public class dbWork {
                     dbWork.setSID(staffList.getInt("sID")); //my staff ID array so i know which id is referenced by which index in the list box. -DC
 
                     resultsReturnList.addElement(
-                                    staffList.getString("sFname") + "        " + 
-                                    staffList.getString("sLname") + "        " + 
-                                    staffList.getString("sPhone") + "        " + 
-                                    staffList.getString("sDatetime") + "        " + 
-                                    staffList.getString("sStatus")); //adding the elements of interest for the viewEvent UI. -DC
+                                    tableBuilder.rowBuilder(5,staffList.getString("sFname")) + 
+                                    tableBuilder.rowBuilder(5, staffList.getString("sLname")) +
+                                    tableBuilder.rowBuilder(5,staffList.getString("sPhone")) +
+                                    tableBuilder.rowBuilder(5,staffList.getString("sDatetime")) + 
+                                    tableBuilder.rowBuilder(5,staffList.getString("sStatus"))); //adding the elements of interest for the viewEvent UI. -DC
                 }
                 dbConnection.close();//closing the connection. -DC
                 return resultsReturnList;      //returning the contructed results list from the resultset. -DC
@@ -507,12 +507,19 @@ public class dbWork {
                 ResultSet vendorList = viewVendorSQL.executeQuery(dbSelect);
 
                 dbWork.clearVID(); //resetting the vendors ID array. -DC
+                //resultsReturnList.addElement(tableBuilder.rowBuilder(5, "Vendor:") + tableBuilder.rowBuilder(5, "First:") + tableBuilder.rowBuilder(5, "Last:") + tableBuilder.rowBuilder(5, "Medium:") + tableBuilder.rowBuilder(5, "Status:"));
+                
 
                 while (vendorList.next()) { //parallel arrays for storing the primary key for vendors with a specific eID foreign key. -DC
                                      
                     dbWork.setVID(vendorList.getInt("vID")); //my vendors ID array so i know which id is referenced by which index in the list box. -DC
 
-                    resultsReturnList.addElement(vendorList.getString("vName") + "        " + vendorList.getString("vFname") + "        " + vendorList.getString("vLname") + "        " + vendorList.getString("vMedium") + "        " + vendorList.getString("vStatus")); //adding the elements of interest for the viewVendor UI. -DC
+                    resultsReturnList.addElement(
+                            tableBuilder.rowBuilder(5, vendorList.getString("vName")) + 
+                            tableBuilder.rowBuilder(5, vendorList.getString("vFname")) + 
+                            tableBuilder.rowBuilder(5, vendorList.getString("vLname")) + 
+                            tableBuilder.rowBuilder(5, vendorList.getString("vMedium")) + 
+                            tableBuilder.rowBuilder(5, vendorList.getString("vStatus"))); //adding the elements of interest for the viewVendor UI. -DC
                 }
                 dbConnection.close();//closing the connection. -DC
                 return resultsReturnList;//returning the contructed results list from the resultset. -DC
@@ -534,7 +541,7 @@ public class dbWork {
             Boolean testConnection = dbConnection.isValid(10); //testing the connection. -DC
 
             DefaultListModel resultsReturnList = new DefaultListModel();
-            DefaultTableModel resultsReturnListTable = new DefaultTableModel();
+            //DefaultTableModel resultsReturnListTable = new DefaultTableModel();
             
             if (testConnection = true) {
                 System.out.println("Connected to Database."); //stub to tell me if the connection failed or the query. -DC
@@ -545,6 +552,8 @@ public class dbWork {
                 ResultSet eventList = createEventSQL.executeQuery(dbSelect);
 
                 dbWork.clearEID(); //resetting resetting the event ID array. -DC
+                
+                //resultsReturnList.addElement(tableBuilder.rowBuilder(3, "Name:") + tableBuilder.rowBuilder(3, "Location:") + tableBuilder.rowBuilder(3, "Date:"));
 
                 while (eventList.next()) { //parallel arrays for storing the primary key for the events and the list box. -DC
                     

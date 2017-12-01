@@ -15,10 +15,10 @@ public class tableBuilder {
         
        if(i == 1){
             
-            if (len > 10){                    
-                    x = x.substring(0,7) + "..." + "  "; //string is to big, cutting it down. -DC
+            if (len > 60){                    
+                    x = x.substring(0,397) + "..." + "  "; //string is to big, cutting it down. -DC
                 }else{                
-                   len = 10 - len; //String is not big enough, adding spaces. -DC
+                   len = 60 - len; //String is not big enough, adding spaces. -DC
                    int j = 0;
                    String spc = " ";
                    for(j = 0; j <= len; j++){
@@ -32,8 +32,8 @@ public class tableBuilder {
         
         if(i == 2){
             
-            if (len > 10){                    
-                    x = x.substring(0,7) + "..." + "  "; //string is to big, cutting it down. -DC
+            if (len > 30){                    
+                    x = x.substring(0,27) + "..." + "  "; //string is to big, cutting it down. -DC
                 }else{                
                    len = 10 - len; //String is not big enough, adding spaces. -DC
                    int j = 0;
@@ -49,10 +49,10 @@ public class tableBuilder {
         
         if(i == 3){
             
-            if (len > 10){                    
-                    x = x.substring(0,7) + "..." + "  "; //string is to big, cutting it down. -DC
+            if (len > 15){                    
+                    x = x.substring(0,12) + "..." + "  "; //string is to big, cutting it down. -DC
                 }else{                
-                   len = 10 - len; //String is not big enough, adding spaces. -DC
+                   len = 15 - len; //String is not big enough, adding spaces. -DC
                    int j = 0;
                    String spc = " ";
                    for(j = 0; j <= len; j++){

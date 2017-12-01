@@ -32,12 +32,13 @@ public class addVendor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        addVendorBackButton = new javax.swing.JButton();
+        addVendorPanel = new javax.swing.JPanel();
         addVendorLabel = new javax.swing.JLabel();
-        addVendorNameInput = new javax.swing.JTextField();
+        addVendorLogoLabel = new javax.swing.JLabel();
         addVendorNameLabel = new javax.swing.JLabel();
-        addVendorFnameInput = new javax.swing.JTextField();
+        addVendorNameInput = new javax.swing.JTextField();
         addVendorFnameLabel = new javax.swing.JLabel();
+        addVendorFnameInput = new javax.swing.JTextField();
         addVendorLnameLabel = new javax.swing.JLabel();
         addVendorLnameInput = new javax.swing.JTextField();
         addVendorMediumLabel = new javax.swing.JLabel();
@@ -45,20 +46,16 @@ public class addVendor extends javax.swing.JFrame {
         addVendorStatusLabel = new javax.swing.JLabel();
         addVendorStatusInput = new javax.swing.JTextField();
         addVendorSubmitButton = new javax.swing.JButton();
-        addVendorLogoLabel = new javax.swing.JLabel();
+        addVendorBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        addVendorBackButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        addVendorBackButton.setText("Back");
-        addVendorBackButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addVendorBackButtonActionPerformed(evt);
-            }
-        });
+        addVendorPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        addVendorLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        addVendorLabel.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         addVendorLabel.setText("Add Vendor");
+
+        addVendorLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
 
         addVendorNameLabel.setText("Name of Vendor:");
 
@@ -84,87 +81,96 @@ public class addVendor extends javax.swing.JFrame {
             }
         });
 
-        addVendorLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+        addVendorBackButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        addVendorBackButton.setText("Back");
+        addVendorBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addVendorBackButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout addVendorPanelLayout = new javax.swing.GroupLayout(addVendorPanel);
+        addVendorPanel.setLayout(addVendorPanelLayout);
+        addVendorPanelLayout.setHorizontalGroup(
+            addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addVendorPanelLayout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addVendorPanelLayout.createSequentialGroup()
+                        .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addVendorMediumLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(addVendorNameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(addVendorStatusLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addVendorPanelLayout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addVendorLnameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(addVendorFnameLabel, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(addVendorStatusInput)
+                            .addComponent(addVendorFnameInput, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addVendorNameInput, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addVendorLnameInput, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addVendorMediumInput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(74, 74, 74))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addVendorPanelLayout.createSequentialGroup()
+                        .addComponent(addVendorLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(addVendorPanelLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(addVendorSubmitButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(addVendorBackButton)
+                        .addGap(40, 40, 40)))
+                .addComponent(addVendorLogoLabel)
+                .addGap(49, 49, 49))
+        );
+        addVendorPanelLayout.setVerticalGroup(
+            addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addVendorPanelLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addVendorLogoLabel)
+                    .addGroup(addVendorPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(addVendorLabel)
+                        .addGap(18, 18, 18)
+                        .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addVendorNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addVendorNameLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addVendorFnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addVendorFnameLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addVendorLnameLabel)
+                            .addComponent(addVendorLnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addVendorMediumLabel)
+                            .addComponent(addVendorMediumInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addVendorStatusInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addVendorStatusLabel))))
+                .addGap(29, 29, 29)
+                .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addVendorBackButton)
+                    .addComponent(addVendorSubmitButton))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(addVendorStatusLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(addVendorStatusInput, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(addVendorSubmitButton)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(addVendorMediumLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(addVendorNameLabel, javax.swing.GroupLayout.Alignment.TRAILING))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(addVendorLnameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(addVendorFnameLabel, javax.swing.GroupLayout.Alignment.TRAILING))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(addVendorFnameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                            .addComponent(addVendorNameInput)
-                            .addComponent(addVendorLnameInput)
-                            .addComponent(addVendorMediumInput))))
-                .addGap(110, 110, 110))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(addVendorBackButton)
-                        .addGap(89, 89, 89))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(addVendorLabel)
-                        .addGap(50, 50, 50)
-                        .addComponent(addVendorLogoLabel)
-                        .addGap(36, 36, 36))))
+            .addComponent(addVendorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(addVendorLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(addVendorLogoLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addVendorNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addVendorNameLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addVendorFnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addVendorFnameLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addVendorLnameLabel)
-                    .addComponent(addVendorLnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addVendorMediumLabel)
-                    .addComponent(addVendorMediumInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addVendorStatusInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addVendorStatusLabel))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addVendorBackButton)
-                    .addComponent(addVendorSubmitButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(addVendorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -253,6 +259,7 @@ public class addVendor extends javax.swing.JFrame {
     private javax.swing.JLabel addVendorMediumLabel;
     private javax.swing.JTextField addVendorNameInput;
     private javax.swing.JLabel addVendorNameLabel;
+    private javax.swing.JPanel addVendorPanel;
     private javax.swing.JTextField addVendorStatusInput;
     private javax.swing.JLabel addVendorStatusLabel;
     private javax.swing.JButton addVendorSubmitButton;

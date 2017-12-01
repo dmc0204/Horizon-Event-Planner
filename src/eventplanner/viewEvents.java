@@ -51,27 +51,36 @@ public class viewEvents extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        viewEventsPanel = new javax.swing.JPanel();
+        viewEventsLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         viewEventsJlist = new javax.swing.JList<>();
-        viewEventsBackButton = new javax.swing.JButton();
-        viewEventDeleteButton = new javax.swing.JButton();
-        viewEventsManageButton = new javax.swing.JButton();
-        viewEventsLabel = new javax.swing.JLabel();
-        viewEventsPrintButton = new javax.swing.JButton();
         viewEventsLogoLabel = new javax.swing.JLabel();
+        viewEventsManageButton = new javax.swing.JButton();
+        viewEventDeleteButton = new javax.swing.JButton();
+        viewEventsPrintButton = new javax.swing.JButton();
+        viewEventsBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        viewEventsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        viewEventsPanel.setForeground(new java.awt.Color(255, 255, 255));
+
+        viewEventsLabel.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        viewEventsLabel.setText("View Events");
 
         viewEventsJlist.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         viewEventsJlist.setFont(new java.awt.Font("Lucida Console", 1, 14)); // NOI18N
         viewEventsJlist.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(viewEventsJlist);
 
-        viewEventsBackButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        viewEventsBackButton.setText("Back");
-        viewEventsBackButton.addActionListener(new java.awt.event.ActionListener() {
+        viewEventsLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+
+        viewEventsManageButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        viewEventsManageButton.setText("Manage");
+        viewEventsManageButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewEventsBackButtonActionPerformed(evt);
+                viewEventsManageButtonActionPerformed(evt);
             }
         });
 
@@ -83,17 +92,6 @@ public class viewEvents extends javax.swing.JFrame {
             }
         });
 
-        viewEventsManageButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        viewEventsManageButton.setText("Manage");
-        viewEventsManageButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewEventsManageButtonActionPerformed(evt);
-            }
-        });
-
-        viewEventsLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        viewEventsLabel.setText("View Events");
-
         viewEventsPrintButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         viewEventsPrintButton.setText("Print");
         viewEventsPrintButton.addActionListener(new java.awt.event.ActionListener() {
@@ -102,41 +100,51 @@ public class viewEvents extends javax.swing.JFrame {
             }
         });
 
-        viewEventsLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+        viewEventsBackButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        viewEventsBackButton.setText("Back");
+        viewEventsBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewEventsBackButtonActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(viewEventDeleteButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                    .addComponent(viewEventsPrintButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                    .addComponent(viewEventsBackButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(viewEventsManageButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(47, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        javax.swing.GroupLayout viewEventsPanelLayout = new javax.swing.GroupLayout(viewEventsPanel);
+        viewEventsPanel.setLayout(viewEventsPanelLayout);
+        viewEventsPanelLayout.setHorizontalGroup(
+            viewEventsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewEventsPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(viewEventsLabel)
-                .addGap(119, 119, 119)
-                .addComponent(viewEventsLogoLabel)
-                .addGap(82, 82, 82))
+                .addGroup(viewEventsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewEventsPanelLayout.createSequentialGroup()
+                        .addComponent(viewEventsLabel)
+                        .addGap(29, 29, 29))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewEventsPanelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addGroup(viewEventsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(viewEventsPanelLayout.createSequentialGroup()
+                        .addGroup(viewEventsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(viewEventsBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewEventsPrintButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewEventDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewEventsManageButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewEventsPanelLayout.createSequentialGroup()
+                        .addComponent(viewEventsLogoLabel)
+                        .addContainerGap())))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewEventsLabel)
-                    .addComponent(viewEventsLogoLabel))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        viewEventsPanelLayout.setVerticalGroup(
+            viewEventsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewEventsPanelLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(viewEventsLabel)
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(viewEventsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(viewEventsLogoLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(viewEventsManageButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(viewEventDeleteButton)
@@ -144,7 +152,18 @@ public class viewEvents extends javax.swing.JFrame {
                 .addComponent(viewEventsPrintButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(viewEventsBackButton)
-                .addGap(46, 46, 46))
+                .addGap(21, 21, 21))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(viewEventsPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(viewEventsPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -281,6 +300,7 @@ public class viewEvents extends javax.swing.JFrame {
     private javax.swing.JLabel viewEventsLabel;
     private javax.swing.JLabel viewEventsLogoLabel;
     private javax.swing.JButton viewEventsManageButton;
+    private javax.swing.JPanel viewEventsPanel;
     private javax.swing.JButton viewEventsPrintButton;
     // End of variables declaration//GEN-END:variables
 }

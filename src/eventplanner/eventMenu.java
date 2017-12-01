@@ -31,20 +31,16 @@ public class eventMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelEventMenuLogo = new javax.swing.JLabel();
-        createEventButton = new javax.swing.JButton();
-        viewEventButton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         eventMenuLabel = new javax.swing.JLabel();
+        viewEventButton = new javax.swing.JButton();
+        createEventButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        createEventButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        createEventButton.setText("Create Event");
-        createEventButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createEventButtonActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        eventMenuLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
 
         viewEventButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         viewEventButton.setText("View Events");
@@ -54,37 +50,51 @@ public class eventMenu extends javax.swing.JFrame {
             }
         });
 
-        eventMenuLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+        createEventButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        createEventButton.setText("Create Event");
+        createEventButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createEventButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(29, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(eventMenuLabel)
+                        .addGap(120, 120, 120))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(createEventButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewEventButton)
+                        .addGap(30, 30, 30))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(eventMenuLabel)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(createEventButton)
+                    .addComponent(viewEventButton))
+                .addGap(51, 51, 51))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(labelEventMenuLogo)
-                .addGap(71, 71, 71)
-                .addComponent(eventMenuLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(createEventButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(viewEventButton)
-                .addGap(45, 45, 45))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(eventMenuLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelEventMenuLogo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewEventButton)
-                    .addComponent(createEventButton))
-                .addGap(30, 30, 30))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -96,7 +106,6 @@ public class eventMenu extends javax.swing.JFrame {
         eventMenuClose(); //making the Event Menu invisible. -DC
         createEvent createEventUI = new createEvent();
         createEventUI.setVisible(true);
-
     }//GEN-LAST:event_createEventButtonActionPerformed
 
     private void viewEventButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEventButtonActionPerformed
@@ -104,7 +113,6 @@ public class eventMenu extends javax.swing.JFrame {
         eventMenuClose(); //Closing Event Menu. -DC
         viewEvents viewEventsUI = new viewEvents();//Constructing viewEvents jframe. -DC
         viewEventsUI.setVisible(true);
-
     }//GEN-LAST:event_viewEventButtonActionPerformed
     /**
      * @param args the command line arguments
@@ -144,7 +152,7 @@ public class eventMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createEventButton;
     private javax.swing.JLabel eventMenuLabel;
-    private javax.swing.JLabel labelEventMenuLogo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton viewEventButton;
     // End of variables declaration//GEN-END:variables
 }

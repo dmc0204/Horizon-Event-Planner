@@ -28,24 +28,21 @@ public class manageEvents extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        manageEventsJlist = new javax.swing.JScrollPane();
-        manageEventJlist = new javax.swing.JList<>();
+        manageEventPanel = new javax.swing.JPanel();
+        manageEventsLogoLabel = new javax.swing.JLabel();
         manageEventsViewButton = new javax.swing.JButton();
         manageEventsBackButton = new javax.swing.JButton();
+        manageEventsJlist = new javax.swing.JScrollPane();
+        manageEventJlist = new javax.swing.JList<>();
         manageEventsLabel = new javax.swing.JLabel();
-        manageEventsLogoLabel = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        manageEventJlist.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        manageEventJlist.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Vendors", "Staff", "Jobs", "Sponsors" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        manageEventsJlist.setViewportView(manageEventJlist);
+        manageEventPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        manageEventsLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
 
         manageEventsViewButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         manageEventsViewButton.setText("View");
@@ -63,52 +60,64 @@ public class manageEvents extends javax.swing.JFrame {
             }
         });
 
-        manageEventsLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        manageEventJlist.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        manageEventJlist.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Vendors", "Staff", "Jobs", "Sponsors" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        manageEventsJlist.setViewportView(manageEventJlist);
+
+        manageEventsLabel.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         manageEventsLabel.setText("Manage Event");
 
-        manageEventsLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
+        javax.swing.GroupLayout manageEventPanelLayout = new javax.swing.GroupLayout(manageEventPanel);
+        manageEventPanel.setLayout(manageEventPanelLayout);
+        manageEventPanelLayout.setHorizontalGroup(
+            manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(manageEventPanelLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addGroup(manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(manageEventsLabel)
+                    .addGroup(manageEventPanelLayout.createSequentialGroup()
+                        .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(manageEventsViewButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(manageEventsBackButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(42, 42, 42)
+                        .addComponent(manageEventsLogoLabel)))
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
+        manageEventPanelLayout.setVerticalGroup(
+            manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(manageEventPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(manageEventsLabel)
+                .addGroup(manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(manageEventPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                        .addComponent(manageEventsViewButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(manageEventsBackButton)
+                        .addGap(36, 36, 36))
+                    .addGroup(manageEventPanelLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(manageEventsLogoLabel)
+                            .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(86, 291, Short.MAX_VALUE)
-                .addComponent(manageEventsLogoLabel)
-                .addGap(32, 32, 32))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(manageEventsLabel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(manageEventsViewButton))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(manageEventsBackButton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(manageEventPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(manageEventsLogoLabel)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(manageEventsLabel)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(manageEventsViewButton)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(manageEventsBackButton)
-                .addGap(31, 31, 31))
+            .addComponent(manageEventPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -208,6 +217,7 @@ public class manageEvents extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JList<String> manageEventJlist;
+    private javax.swing.JPanel manageEventPanel;
     private javax.swing.JButton manageEventsBackButton;
     private javax.swing.JScrollPane manageEventsJlist;
     private javax.swing.JLabel manageEventsLabel;
