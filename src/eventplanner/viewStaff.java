@@ -1,6 +1,17 @@
 package eventplanner;
 import java.sql.SQLException;
 import javax.swing.DefaultListModel;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import org.jvnet.substance.*;
+import org.jvnet.substance.border.*;
+import org.jvnet.substance.button.*;
+import org.jvnet.substance.painter.*;
+import org.jvnet.substance.theme.*;
+import org.jvnet.substance.title.*;
+import org.jvnet.substance.watermark.*;
 /**
  *
  * @author Donovan Cummins - (Team Horizon)
@@ -236,6 +247,25 @@ public class viewStaff extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+         try {  
+            
+        UIManager.setLookAndFeel(new SubstanceLookAndFeel());  
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JDialog.setDefaultLookAndFeelDecorated(true);
+        SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.AutumnSkin");
+        SubstanceLookAndFeel.setCurrentTheme(new org.jvnet.substance.theme.SubstanceBottleGreenTheme());//Set theme. -ZL
+         SubstanceLookAndFeel.setCurrentButtonShaper(new StandardButtonShaper()); 
+                               SubstanceLookAndFeel.setCurrentWatermark(new SubstanceNoneWatermark());  // Set watermark. -ZL
+                               
+                               SubstanceLookAndFeel.setCurrentBorderPainter(new org.jvnet.substance.border.ClassicInnerBorderPainter());  //Set border. -ZL
+ 
+                               SubstanceLookAndFeel.setCurrentGradientPainter(new StandardGradientPainter());  //Render Settings. -ZL  
+                             
+                               SubstanceLookAndFeel.setCurrentTitlePainter(new MatteHeaderPainter()); //Set title. -ZL
+  
+    } catch (UnsupportedLookAndFeelException e) {  
+        System.err.println("Something went wrong!");  
+    }  
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new viewStaff().setVisible(true);

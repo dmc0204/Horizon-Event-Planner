@@ -51,13 +51,8 @@
                               <Component id="addVendorMediumLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="addVendorNameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="addVendorStatusLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="addVendorLnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="addVendorFnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="addVendorLnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="addVendorFnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">

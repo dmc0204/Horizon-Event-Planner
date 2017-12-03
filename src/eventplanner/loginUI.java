@@ -23,6 +23,26 @@ public class loginUI extends javax.swing.JFrame {
     int count = 5;
     public loginUI() {
         initComponents();
+        
+      try {  
+            
+        UIManager.setLookAndFeel(new SubstanceLookAndFeel());  
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JDialog.setDefaultLookAndFeelDecorated(true);
+        SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.AutumnSkin");
+        SubstanceLookAndFeel.setCurrentTheme(new org.jvnet.substance.theme.SubstanceAquaTheme());//Set theme. -ZL
+         SubstanceLookAndFeel.setCurrentButtonShaper(new StandardButtonShaper()); 
+                               SubstanceLookAndFeel.setCurrentWatermark(new SubstanceNoneWatermark());  // Set watermark. -ZL
+                               
+                               SubstanceLookAndFeel.setCurrentBorderPainter(new org.jvnet.substance.border.ClassicInnerBorderPainter());  //Set border. -ZL
+ 
+                               SubstanceLookAndFeel.setCurrentGradientPainter(new StandardGradientPainter());  //Render Settings. -ZL  
+                             
+                               SubstanceLookAndFeel.setCurrentTitlePainter(new MatteHeaderPainter()); //Set title. -ZL
+  
+    } catch (UnsupportedLookAndFeelException e) {  
+        System.err.println("Something went wrong!");  
+    }  
     }
 
     public void loginUIClose() { //method within the object to close the thing after login. -DC
@@ -198,23 +218,7 @@ if(count == 0)
         //</editor-fold>
 
         /* Create and display the form */
-        try {  
-        UIManager.setLookAndFeel(new SubstanceLookAndFeel());  
-        JFrame.setDefaultLookAndFeelDecorated(true);
-        JDialog.setDefaultLookAndFeelDecorated(true);
-        SubstanceLookAndFeel.setCurrentTheme(new SubstanceTerracottaTheme());//Set theme. -ZL
-         SubstanceLookAndFeel.setCurrentButtonShaper(new StandardButtonShaper()); 
-                               SubstanceLookAndFeel.setCurrentWatermark(new SubstanceStripeWatermark());  // Set watermark. -ZL
-                               
-                               SubstanceLookAndFeel.setCurrentBorderPainter(new StandardBorderPainter());  //Set border. -ZL
- 
-                               SubstanceLookAndFeel.setCurrentGradientPainter(new StandardGradientPainter());  //Render Settings. -ZL  
-                             
-                               SubstanceLookAndFeel.setCurrentTitlePainter(new MatteHeaderPainter()); //Set title. -ZL
-  
-    } catch (UnsupportedLookAndFeelException e) {  
-        System.err.println("Something went wrong!");  
-    }
+      
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new loginUI().setVisible(true);
