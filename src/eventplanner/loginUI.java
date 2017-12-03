@@ -1,6 +1,17 @@
 package eventplanner;
 import java.sql.*;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import org.jvnet.substance.*;
+import org.jvnet.substance.border.*;
+import org.jvnet.substance.button.*;
+import org.jvnet.substance.painter.*;
+import org.jvnet.substance.theme.*;
+import org.jvnet.substance.title.*;
+import org.jvnet.substance.watermark.*;
 /**
  *
  * @author Donovan Cummins - (Team Horizon)
@@ -47,6 +58,7 @@ public class loginUI extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
 
         loginPanel.setBackground(new java.awt.Color(255, 255, 255));
+        loginPanel.setMaximumSize(new java.awt.Dimension(402, 282));
 
         loginUILogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eventplanner/horizonlogoTiny.png"))); // NOI18N
 
@@ -186,6 +198,23 @@ if(count == 0)
         //</editor-fold>
 
         /* Create and display the form */
+        try {  
+        UIManager.setLookAndFeel(new SubstanceLookAndFeel());  
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JDialog.setDefaultLookAndFeelDecorated(true);
+        SubstanceLookAndFeel.setCurrentTheme(new SubstanceTerracottaTheme());//Set theme. -ZL
+         SubstanceLookAndFeel.setCurrentButtonShaper(new StandardButtonShaper()); 
+                               SubstanceLookAndFeel.setCurrentWatermark(new SubstanceStripeWatermark());  // Set watermark. -ZL
+                               
+                               SubstanceLookAndFeel.setCurrentBorderPainter(new StandardBorderPainter());  //Set border. -ZL
+ 
+                               SubstanceLookAndFeel.setCurrentGradientPainter(new StandardGradientPainter());  //Render Settings. -ZL  
+                             
+                               SubstanceLookAndFeel.setCurrentTitlePainter(new MatteHeaderPainter()); //Set title. -ZL
+  
+    } catch (UnsupportedLookAndFeelException e) {  
+        System.err.println("Something went wrong!");  
+    }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new loginUI().setVisible(true);
