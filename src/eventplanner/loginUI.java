@@ -1,5 +1,6 @@
 package eventplanner;
 import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Donovan Cummins - (Team Horizon)
@@ -8,6 +9,7 @@ public class loginUI extends javax.swing.JFrame {
     /**
      * Creates new form loginUI
      */
+    int count = 5;
     public loginUI() {
         initComponents();
     }
@@ -138,12 +140,23 @@ public class loginUI extends javax.swing.JFrame {
                 eventMenu eventMenuGUI = new eventMenu(); //constructing eventMenu GUI -DC   
                 eventMenuGUI.setVisible(true); //making the new jframe visible -DC          
             }
+             if(dbConnected = false){
+                count--; //Attempts decrease by 1. -ZL
+                 JOptionPane.showMessageDialog(null, "Username does not match password, " + count + " attempts "+ "left" ); //Pop up dialog, tell the user the number of times left. -ZL
+                 loginUsernameInput.setText(""); //Set username field. -ZL
+                 loginPasswordInput.setText(""); //Set text field. -ZL
+            }
         } catch (ClassNotFoundException e) { //catching exception if there is a jdbc driver error with the database connection. -DC
             System.out.println("ClassNotFoundException");
         } catch (SQLException f) { //catching exceptoin if there is a login error with the database. Maybe wrong login or password. -DC
             System.out.println("SQLException");
         }
-
+if(count == 0)
+              {
+                  
+                   JOptionPane.showMessageDialog(null, "Username does not match password, 0 attempts left. Program will be closed" ); // Pop up dialog when no chances left. -ZL
+                    System.exit(0); //User interface closed
+              }       
     }//GEN-LAST:event_loginEnterButtonActionPerformed
     /**
      * @param args the command line arguments
