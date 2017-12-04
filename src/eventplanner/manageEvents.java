@@ -15,6 +15,7 @@ import org.jvnet.substance.watermark.*;
 /**
  *
  * @author Donovan Cummins - (Team Horizon)
+ * @UI developer Zilin Li - (Team Horizon)
  */
 public class manageEvents extends javax.swing.JFrame {
     /**
@@ -89,37 +90,39 @@ public class manageEvents extends javax.swing.JFrame {
         manageEventPanelLayout.setHorizontalGroup(
             manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(manageEventPanelLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
                 .addGroup(manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(manageEventsLabel)
                     .addGroup(manageEventPanelLayout.createSequentialGroup()
-                        .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(84, 84, 84)
+                        .addComponent(manageEventsLabel))
+                    .addGroup(manageEventPanelLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(manageEventsViewButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(manageEventsBackButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(42, 42, 42)
+                        .addGap(30, 30, 30)
                         .addComponent(manageEventsLogoLabel)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         manageEventPanelLayout.setVerticalGroup(
             manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(manageEventPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(manageEventsLabel)
+                .addGap(60, 60, 60)
                 .addGroup(manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(manageEventPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                        .addComponent(manageEventsViewButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(manageEventsBackButton)
-                        .addGap(36, 36, 36))
-                    .addGroup(manageEventPanelLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageEventPanelLayout.createSequentialGroup()
+                        .addComponent(manageEventsLogoLabel)
+                        .addGap(44, 44, 44))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageEventPanelLayout.createSequentialGroup()
                         .addGroup(manageEventPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(manageEventsLogoLabel)
-                            .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(1, 1, 1))))
+                            .addComponent(manageEventsJlist, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(manageEventPanelLayout.createSequentialGroup()
+                                .addComponent(manageEventsViewButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(manageEventsBackButton)))
+                        .addGap(36, 36, 36))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

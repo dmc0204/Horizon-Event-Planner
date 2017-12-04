@@ -15,6 +15,7 @@ import org.jvnet.substance.watermark.*;
 /**
  *
  * @author Donovan Cummins - (Team Horizon)
+ * @UI developer Zilin Li - (Team Horizon)
  */
 public class loginUI extends javax.swing.JFrame {
     /**
@@ -173,15 +174,21 @@ public class loginUI extends javax.swing.JFrame {
                 eventMenuGUI.setVisible(true); //making the new jframe visible -DC          
             }
              if(dbConnected = false){
-                count--; //Attempts decrease by 1. -ZL
+               /*
+                 count--; //Attempts decrease by 1. -ZL
                  JOptionPane.showMessageDialog(null, "Username does not match password, " + count + " attempts "+ "left" ); //Pop up dialog, tell the user the number of times left. -ZL
                  loginUsernameInput.setText(""); //Set username field. -ZL
                  loginPasswordInput.setText(""); //Set text field. -ZL
+                 */
             }
         } catch (ClassNotFoundException e) { //catching exception if there is a jdbc driver error with the database connection. -DC
             System.out.println("ClassNotFoundException");
         } catch (SQLException f) { //catching exceptoin if there is a login error with the database. Maybe wrong login or password. -DC
             System.out.println("SQLException");
+                count--; //Attempts decrease by 1. -ZL
+                 JOptionPane.showMessageDialog(null, "Username does not match password, " + count + " attempts "+ "left" ); //Pop up dialog, tell the user the number of times left. -ZL
+                 loginUsernameInput.setText(""); //Set username field. -ZL
+                 loginPasswordInput.setText(""); //Set text field. -ZL
         }
 if(count == 0)
               {

@@ -13,7 +13,8 @@ import org.jvnet.substance.title.*;
 import org.jvnet.substance.watermark.*;
 /**
  *
- * @author Donovan Cummins - (Team Horizon)
+ * @author Donovan Cummins - (Team Horizon
+ * @UI developer Zilin Li - (Team Horizon)
  */
 public class addVendor extends javax.swing.JFrame {
     /**
@@ -105,18 +106,15 @@ public class addVendor extends javax.swing.JFrame {
         addVendorPanelLayout.setHorizontalGroup(
             addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addVendorPanelLayout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
+                .addGap(68, 68, 68)
                 .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addVendorPanelLayout.createSequentialGroup()
                         .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(addVendorMediumLabel, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(addVendorNameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(addVendorStatusLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addVendorPanelLayout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(addVendorLnameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(addVendorFnameLabel, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(addVendorLnameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(addVendorFnameLabel, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(addVendorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(addVendorStatusInput)

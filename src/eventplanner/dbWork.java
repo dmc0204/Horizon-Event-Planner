@@ -432,7 +432,7 @@ public class dbWork {
                                     tableBuilder.rowBuilder(5,sponsorsList.getString("spName")) +
                                     tableBuilder.rowBuilder(5,sponsorsList.getString("spFname")) + 
                                     tableBuilder.rowBuilder(5,sponsorsList.getString("spLname"))+
-                                    tableBuilder.rowBuilder(5,sponsorsList.getString("spPhone")) +
+                                    tableBuilder.rowBuilder(5,sponsorsList.getString("spPhone")) + "$" +
                                     tableBuilder.rowBuilder(5,sponsorsList.getString("spPledge"))); //adding the elements of interest for the viewSponsors UI. -DC
                 }
                 dbConnection.close();//closing the connection. -DC

@@ -13,7 +13,8 @@ import org.jvnet.substance.title.*;
 import org.jvnet.substance.watermark.*;
 /**
  *
- * @author Donovan Cummins - (Team Horizon)
+ * @author Donovan Cummins - (Team Horizon
+ * @UI developer Zilin Li - (Team Horizon)
  */
 public class addJobs extends javax.swing.JFrame {
 
@@ -82,8 +83,8 @@ public class addJobs extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(85, 85, 85)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(addJobsSubmitButton)
@@ -103,7 +104,7 @@ public class addJobs extends javax.swing.JFrame {
                             .addComponent(addJobTitleInput, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addJobDatetimeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(136, 136, 136)))
-                .addGap(25, 25, 25))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

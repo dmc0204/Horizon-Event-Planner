@@ -14,6 +14,7 @@ import org.jvnet.substance.watermark.*;
 /**
  *
  * @author Donovan Cummins - (Team Horizon)
+ * @UI developer Zilin Li - (Team Horizon)
  */
 public class addStaff extends javax.swing.JFrame {
     /**
@@ -124,7 +125,7 @@ public class addStaff extends javax.swing.JFrame {
                         .addComponent(addStaffSubmitButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(addStaffBackButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
                 .addComponent(addStaffLogoLabel)
                 .addGap(27, 27, 27))
         );
