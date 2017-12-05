@@ -22,6 +22,7 @@ public class addVendor extends javax.swing.JFrame {
      */
     public addVendor() {
         initComponents();
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
     }
     
     public void addVendorClose(){
@@ -33,6 +34,7 @@ public class addVendor extends javax.swing.JFrame {
     public void addVendorOpen(){
     
         this.setVisible(true);
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
         
     }
     /**

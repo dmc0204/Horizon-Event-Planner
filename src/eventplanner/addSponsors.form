@@ -52,36 +52,31 @@
                           <Component id="addSponsorLogoLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="addSponsorNameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="addSponsorFnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="addSponsorLnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="addSponsorPhoneLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="addSponsorPledgeLabel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="addSponsorNameInput" min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="addSponsorFnameInput" min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="addSponsorLnameInput" min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="addSponsorPhoneInput" min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="addSponsorPledgeInput" min="-2" pref="71" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
-                                  <Component id="addSponsorSubmitButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="addSponsorBackButton" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="addSponsorNameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="addSponsorFnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="addSponsorLnameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="addSponsorPhoneLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="addSponsorPledgeLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="addSponsorNameInput" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="addSponsorFnameInput" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="addSponsorLnameInput" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="addSponsorPhoneInput" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="addSponsorPledgeInput" min="-2" pref="71" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
+                          <Component id="addSponsorSubmitButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="addSponsorBackButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <EmptySpace min="42" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

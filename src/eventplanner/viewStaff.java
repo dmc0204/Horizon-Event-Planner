@@ -23,6 +23,7 @@ public class viewStaff extends javax.swing.JFrame {
      */
     public viewStaff() {
         initComponents();
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
         
         try { //this is my way of populating the staff list box with only the staff for the event the user selected. -DC
             
@@ -52,6 +53,7 @@ public class viewStaff extends javax.swing.JFrame {
     
     public void viewStaffOpen(){
         this.setVisible(true);
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
     }
     /**
      * This method is called from within the constructor to initialize the form.

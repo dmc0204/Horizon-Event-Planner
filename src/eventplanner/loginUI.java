@@ -25,6 +25,8 @@ public class loginUI extends javax.swing.JFrame {
     public loginUI() {
         initComponents();
         
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
+        
       try {  
             
         UIManager.setLookAndFeel(new SubstanceLookAndFeel());  
@@ -54,7 +56,8 @@ public class loginUI extends javax.swing.JFrame {
 
     public void loginUIOpen() {
 
-        this.setVisible(true); //making this visible. This being the loginUI jframe. -DC
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);//making this visible. This being the loginUI jframe. -DC
 
     }
     /**

@@ -20,6 +20,7 @@ public class addJobs extends javax.swing.JFrame {
 
     public addJobs() {
         initComponents();
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
     }
 
     public void addJobsClose(){
@@ -28,6 +29,7 @@ public class addJobs extends javax.swing.JFrame {
     
     public void addJobsOpen(){
         this.setVisible(true);
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
     }
     /**
      * This method is called from within the constructor to initialize the form.

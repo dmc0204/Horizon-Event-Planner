@@ -20,6 +20,7 @@ public class viewEvents extends javax.swing.JFrame {
      */
     public viewEvents() {
         initComponents();
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
 
         try {
 
@@ -48,6 +49,7 @@ public class viewEvents extends javax.swing.JFrame {
     public void viewEventsOpen() { //Setting visibility of this jframe. -DC
 
         this.setVisible(true);
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
 
     }
     /**

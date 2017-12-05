@@ -22,6 +22,7 @@ public class createEvent extends javax.swing.JFrame {
      */
     public createEvent() {
         initComponents();
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
     }
 
     public void createEventClose() { //setting Create Event Menu visiblity. -DC
@@ -33,6 +34,7 @@ public class createEvent extends javax.swing.JFrame {
     public void createEventOpen() { //setting Create Event Menu visiblity. -DC
 
         this.setVisible(true);
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
 
     }
     /**

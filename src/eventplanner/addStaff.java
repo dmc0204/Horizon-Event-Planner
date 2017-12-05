@@ -22,6 +22,7 @@ public class addStaff extends javax.swing.JFrame {
      */
     public addStaff() {
         initComponents();
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
     }
     
     public void addStaffClose(){ //closing method for addStaff. -DC
@@ -33,6 +34,7 @@ public class addStaff extends javax.swing.JFrame {
     public void addStaffOpen(){ //opening method for addStaff. -DC
         
         this.setVisible(true);
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
         
     }
 

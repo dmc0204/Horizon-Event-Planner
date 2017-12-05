@@ -23,6 +23,7 @@ public class eventMenu extends javax.swing.JFrame {
      */
     public eventMenu() {
         initComponents();
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
     }
 
     public void eventMenuClose() { //method for setting visibility of the Event Menu. -DC
@@ -34,6 +35,7 @@ public class eventMenu extends javax.swing.JFrame {
     public void eventMenuOpen() { //method for setting visibility of the Event Menu. -DC
 
         this.setVisible(true);
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
 
     }
     /**

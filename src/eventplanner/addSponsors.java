@@ -20,6 +20,7 @@ public class addSponsors extends javax.swing.JFrame {
 
     public addSponsors() {
         initComponents();
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
     }
     
     public void addSponsorsClose(){
@@ -31,6 +32,7 @@ public class addSponsors extends javax.swing.JFrame {
     public void addSponsorsOpen(){
         
         this.setVisible(true);
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
         
     }
 

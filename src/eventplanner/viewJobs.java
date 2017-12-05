@@ -23,6 +23,7 @@ public class viewJobs extends javax.swing.JFrame {
      */
     public viewJobs() { 
         initComponents();
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
         
         try { //this is my way of populating the staff list box with only the staff for the event the user selected. -DC
 
@@ -51,6 +52,7 @@ public class viewJobs extends javax.swing.JFrame {
     public void viewJobsOpen(){ //method for opening viewJobs. -DC
         
         this.setVisible(true);
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
         
     }
 

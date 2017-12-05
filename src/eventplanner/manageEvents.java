@@ -2,6 +2,7 @@ package eventplanner;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import org.jvnet.substance.*;
@@ -23,6 +24,7 @@ public class manageEvents extends javax.swing.JFrame {
      */
     public manageEvents() {
         initComponents();
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
     }
 
     public void manageEventsClose(){
@@ -31,6 +33,7 @@ public class manageEvents extends javax.swing.JFrame {
     
     public void manageEventsOpen(){
         this.setVisible(true);
+        this.setLocationRelativeTo(null); //Professor Chen pointed this out during the demo, So I fixed it. -DC
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -140,7 +143,7 @@ public class manageEvents extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageEventsViewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEventsViewButtonActionPerformed
-
+   
     int eventChild = manageEventJlist.getSelectedIndex(); //User selects one of four choices and this is the index value of that selection. -DC
     
     /*
@@ -148,6 +151,12 @@ public class manageEvents extends javax.swing.JFrame {
     Staff = 1
     Jobs = 2
     Sponsors = 3
+    */
+    
+    /*
+    if(eventChild == 100){
+        JOptionPane.showMessageDialog(null, "Please select Vendors, Staff, Jobs, or Sponsors before clicking Manage."); //Pop up dialog, tell the user what they have to select to continue. -DC
+    }
     */
     
     if(eventChild <= 0){
@@ -182,7 +191,9 @@ public class manageEvents extends javax.swing.JFrame {
         viewSponsorsUI.viewSponsorsOpen();
         System.out.println("View Sponsors");
         
-    }
+    }//else{
+      //      JOptionPane.showMessageDialog(null, "Please select Vendors, Staff, Jobs, or Sponsors before clicking Manage."); //Pop up dialog, tell the user what they have to select to continue. -DC
+    //}
     
      
     }//GEN-LAST:event_manageEventsViewButtonActionPerformed
