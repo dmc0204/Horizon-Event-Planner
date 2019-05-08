@@ -13,7 +13,7 @@ import org.jvnet.substance.title.*;
 import org.jvnet.substance.watermark.*;
 /**
  *
- * @author Donovan Cummins - (Team Horizon
+ * @author Donovan Cummins - (Team Horizon)
  * @UI developer Zilin Li - (Team Horizon)
  */
 public class addJobs extends javax.swing.JFrame {
